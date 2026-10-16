@@ -4,6 +4,7 @@
 
 \usepackage{amsmath,mathrsfs,amssymb,empheq,bm,pdfpages,cancel}
 
+#   Add links
 \usepackage[hidelinks]{hyperref}
 \usepackage{titlesec}               %   paragraphs are like subsections
 \setcounter{secnumdepth}{4}         %       Add section numbers
@@ -11,6 +12,22 @@
 \titleformat{\paragraph}[block]     %       Put a line break after the heading
   {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
 %   \subsection{\texorpdfstring{${\bm F}_{01}$}{F01}}
+
+\usepackage{subfiles}
+
+\usepackage[
+  backend=biber,
+  style=apa
+]{biblatex}
+\addbibresource{\subfix{./2015_Hall/references.bib}}
+%  To update references, run "biber note4"
+%      \textcite{shilov1977}
+%      \parencite{shilov1977}
+%      \citeauthor{shilov1977} \citeyear{shilov1977}
+
+\usepackage{cleveref}
+\crefname{equation}{eq.}{eqs.}
+\Crefname{equation}{Eq.}{Eqs.}
 
 \newcommand{\pt}{\partial}
 
