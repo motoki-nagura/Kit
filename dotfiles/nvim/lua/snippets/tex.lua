@@ -352,13 +352,13 @@ return {
   s({ trig = ";qq",      name = "qquad",          wordTrig = false }, { t("\\qquad ") }),
   s({ trig = "nonumber", name = "no number",      wordTrig = false }, { t("\\nonumber ") }),
   s({ trig = "noindent", name = "no indent",      wordTrig = false }, { t("\\noindent ") }),
-  s({ trig = ";ds",      name = "displaystyle",   wordTrig = false }, { t("\\displaystyle ") }),
+  s({ trig = ";dsp",     name = "displaystyle",   wordTrig = false }, { t("\\displaystyle ") }),
   s({ trig = "prime",    name = "prime",          wordTrig = false }, { t("\\prime ") }),
   s({ trig = "circ",     name = "circ",           wordTrig = false }, { t("\\circ ") }),
   s({ trig = "textbf",   name = "text bold",      wordTrig = false }, fmt("\\textbf{{{}}}{}", { i(1), i(0) }) ),
   s({ trig = "vspace",   name = "vspace",         wordTrig = false }, fmt("\\vspace{{{}}}{}", { i(1), i(0) }) ),
   s({ trig = "hspace",   name = "hspace",         wordTrig = false }, fmt("\\hspace{{{}}}{}", { i(1), i(0) }) ),
-  s({ trig = ";{", name = "escaped braces", wordTrig = false }, fmt("\\{{{}\\}}", { i(1) })),
+  s({ trig = ";{",       name = "escaped braces", wordTrig = false }, fmt("\\{{{}\\}}", { i(1) })),
 
   -- ========================
   -- Non LaTeX symbols

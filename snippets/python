@@ -1288,6 +1288,25 @@ traceback.install()
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 #}}}
 
+#             importlib
+
+import importlib.util
+from pathlib import Path
+
+target = Path(__file__).resolve().parents[2] / "plot.py"  #  path of the file including def main()
+
+spec = importlib.util.spec_from_file_location("spectrum_plot", target)
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+
+# Change parameters
+module.year = 2025
+module.depth = 500
+module.variable = "omega"
+
+# Execute main()
+module.main()
+
 #             Cartopy
 #{{{
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
