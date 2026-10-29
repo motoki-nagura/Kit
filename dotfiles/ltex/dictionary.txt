@@ -21,6 +21,7 @@ surjective
 injection
 surjection
 nonreflexivity
+subbasis
 
 indecomposable
 subalgebra

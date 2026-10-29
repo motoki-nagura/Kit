@@ -511,16 +511,16 @@ with PdfPages('fig.pdf') as pdf:
 
 # ----------------- Using zip
 
-formatters = [
-    'AutoDateFormatter(ax.xaxis.get_major_locator())',
-    'ConciseDateFormatter(ax.xaxis.get_major_locator())',
-    'DateFormatter("%b %Y")',
-]
+ttls   = [      'U',       'V',      'T',      'S']
+coords = [ (xu, zu),  (xu, zu), (xt, zt), (xt, zt)]
+data   = [    var_u,     var_v,    var_t,    var_s]
+levels = [   lvls_u,    lvls_v,  lvls_t ,   lvls_s]
+cmaps  = ['seismic', 'seismic',    'jet',    'jet']
 
-fig, axes = plt.subplots(3,1)
-
-for ax, fmt in zip(axes, formatters):
-    plot_axis(ax, formatter=fmt)
+for ax, ttl, (x, y), d, lv, cmap in zip(axes, ttls, coords, data, levels, cmaps):
+    ax.set_title(ttl)
+    cs = ax.contourf(x, y, d[l, :, :], lv, cmap=cmap, extend='both')
+    fig.colorbar(cs, ax=ax)
 
 # ----------------- For a part of panels
 
@@ -1289,13 +1289,18 @@ traceback.install()
 #}}}
 
 #             importlib
+#{{{
+#\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+#////////////////////////////////////////////////
+
+#  Import main(): from a file in a different directory
 
 import importlib.util
 from pathlib import Path
 
 target = Path(__file__).resolve().parents[2] / "plot.py"  #  path of the file including def main()
 
-spec = importlib.util.spec_from_file_location("spectrum_plot", target)
+spec = importlib.util.spec_from_file_location("some_name", target)
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 
@@ -1306,6 +1311,10 @@ module.variable = "omega"
 
 # Execute main()
 module.main()
+
+#////////////////////////////////////////////////
+#\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+#}}}
 
 #             Cartopy
 #{{{
