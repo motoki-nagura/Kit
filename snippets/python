@@ -1012,6 +1012,11 @@ import xarray as xr
 
 var = xr.open_dataset(infile)['var'].sel(lon=slice(x0,x1))
 
+# --------------------------------------  Read in (2)
+
+slice_setting = dict(lon=slice(10., 20.))
+arr = xr.open_dataset("file.nc")['var'].sel(slice_setting)
+
 # --------------------------------------  Convert time to days
 
 time = xr.open_dataset(infile)['time']
