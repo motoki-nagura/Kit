@@ -91,6 +91,7 @@ return {
   s({ trig = ";k",   name = "kappa",   wordTrig = false }, { t("\\kappa") }),
   s({ trig = ";l",   name = "lambda",  wordTrig = false }, { t("\\lambda") }),
   s({ trig = ";m",   name = "mu",      wordTrig = false }, { t("\\mu") }),
+  s({ trig = ";n",   name = "nu",      wordTrig = false }, { t("\\nu") }),
   s({ trig = ";o",   name = "omega",   wordTrig = false }, { t("\\omega") }),
   s({ trig = ";p",   name = "pi",      wordTrig = false }, { t("\\pi") }),
   s({ trig = ";ph",  name = "phi",     wordTrig = false }, { t("\\phi") }),
@@ -225,6 +226,13 @@ return {
 {}]], { i(1, "a"), i(2, "b"), i(3), i(4, "x"), i(0) })
   ),
 
+  s({ trig = "lim", name = "limit", wordTrig = false },
+  fmta("\\lim_{<>}<>", {
+    i(1),
+    i(0),
+  })
+  ),
+
   -- ========================
   -- Vector operations
   -- ========================
@@ -267,6 +275,10 @@ return {
 
   s({ trig = "msc", name = "mathscr {}", wordTrig = false },
     fmt("\\mathscr{{{}}}{}", { i(1), i(0) })
+  ),
+
+  s({ trig = "mbf", name = "mathbf {}", wordTrig = false },
+    fmt("\\mathbf{{{}}}{}", { i(1), i(0) })
   ),
 
   s(
@@ -347,6 +359,14 @@ return {
     fmt("\\check{{{}}}{}", { i(1), i(0) })
   ),
 
+  s(
+  { trig = "dot", name = "\\dot{}", wordTrig = false },
+  fmta("\\dot{<>}<>", {
+    i(1),
+    i(0),
+  })
+  ),
+
   -- ========================
   -- Misc
   -- ========================
@@ -361,6 +381,7 @@ return {
   s({ trig = "vspace",   name = "vspace",         wordTrig = false }, fmt("\\vspace{{{}}}{}", { i(1), i(0) }) ),
   s({ trig = "hspace",   name = "hspace",         wordTrig = false }, fmt("\\hspace{{{}}}{}", { i(1), i(0) }) ),
   s({ trig = ";{",       name = "escaped braces", wordTrig = false }, fmt("\\{{{}\\}}", { i(1) })),
+  s({ trig = "cancel",   name = "cancel",         wordTrig = false }, fmt("\\cancel{{{}}}{}", { i(1), i(0) }) ),
 
   -- ========================
   -- Non LaTeX symbols

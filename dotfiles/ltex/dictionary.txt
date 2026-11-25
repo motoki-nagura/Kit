@@ -22,6 +22,8 @@ injection
 surjection
 nonreflexivity
 subbasis
+homeomorphism
+homeomorphic
 
 indecomposable
 subalgebra
