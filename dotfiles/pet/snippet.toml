@@ -554,48 +554,78 @@ output = ""
 #        Matplotlib
 
 [[snippets]]
-description = "Matplotlib - Imports and global settings"
+description = "Matplotlib - Imports"
 command = """
 import matplotlib.pyplot as plt
-import matplotlib as mpl
-
-plt.rcParams['font.family'] = \"FreeSerif\"                       #  Change global font type
-                                                                #     call it before  plt.subplots
-
-plt.rcParams['font.size'] = 12                                  #  Change global font size
-                                                                #     call it before  plt.subplots
-
-plt.rcParams['image.cmap'] = 'seismic'                          #  Set global color map
-
-plt.rcParams['lines.linewidth'] = 2                             #  Set global line properties
-plt.rcParams['lines.color'] = 'k'
-plt.rcParams['lines.linestyle'] = ':'
-
-from cycler import cycler
-mpl.rcParams['axes.prop_cycle'] = cycler(color=['k','r','b','g'])
-                                                                #  Set colors for line
-
-fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(8,8))
-#      axes[0,1] refers to the first panel from the top and the second from the left
-#      axes[{row #}, {column#}]"""
-tag = ["python", "matplotlib"]
+import matplotlib as mpl"""
+tag = ["python", "matplotlib", "import"]
 output = ""
 
 [[snippets]]
-description = "Matplotlib - Panels"
+description = "Matplotlib - Change global font type"
 command = """
-ax = fig.add_axes([0.15, 0.6, 0.7, 0.3])  #  add \"axis\" (= panel)
-                                           #    [left, bottom, width, height]
+plt.rcParams['font.family'] = \"FreeSerif\"
+ #     call it before  plt.subplots"""
+tag = ["python", "matplotlib", "global", "font"]
+output = ""
 
-fig.delaxes(axes[1])  #  delete \"axis\"
+[[snippets]]
+description = "Matplotlib - Change global font size"
+command = """
+plt.rcParams['font.size'] = 12
+ #     call it before  plt.subplots"""
+tag = ["python", "matplotlib", "global", "font"]
+output = ""
 
+[[snippets]]
+description = "Matplotlib - Set global color map"
+command = """
+plt.rcParams['image.cmap'] = 'seismic'"""
+tag = ["python", "matplotlib", "global", "color"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Set global line properties"
+command = """
+plt.rcParams['lines.linewidth'] = 2
+plt.rcParams['lines.color'] = 'k'
+plt.rcParams['lines.linestyle'] = ':'"""
+tag = ["python", "matplotlib", "global", "line", "property"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Set colors for line"
+command = """
+from cycler import cycler
+mpl.rcParams['axes.prop_cycle'] = cycler(color=['k','r','b','g'])"""
+tag = ["python", "matplotlib", "global", "line", "color"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Delete a panel"
+command = """
+fig.delaxes(axes[1])"""
+tag = ["python", "matplotlib", "axis", "delete"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Add a panel"
+command = """
+ax = fig.add_axes([0.15, 0.6, 0.7, 0.3])  #    [left, bottom, width, height]"""
+tag = ["python", "matplotlib", "axis", "add"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Add Panels"
+command = """
+  #  add \"axis\" (= panel)
 gs = fig.add_gridspec(nrows=3,ncols=2,height_ratios=[1., 1., 2.])  # change ratio
 
 for i in range(3):
     for j in range(2):
         fig.delaxes(axes[i,j])
         axes[i,j] = fig.add_subplot(gs[i,j])"""
-tag = ["python", "matplotlib"]
+tag = ["python", "matplotlib", "axis", "panel", "ratio"]
 output = ""
 
 [[snippets]]
@@ -603,40 +633,17 @@ description = "Matplotlib - Close PDF page"
 command = """
 plt.tight_layout()
 plt.savefig('fig.pdf')"""
-tag = ["python", "matplotlib"]
+tag = ["python", "matplotlib", "close", "pdf"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Multiple PDF pages"
 command = """
-from matplotlib.backends.backend_pdf import PdfPages
-
-def new_page(nrows,ncols):
-    global iplot
-    iplot = 0
-    fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=(8,8))
-    subplots = axes.flatten()     #   row major
-#    subplots = axes.T.flatten()   #   column major
-    return (fig, subplots)
-
 with PdfPages('fig.pdf') as pdf:
-
-    fig, subplots = new_page(nrows, ncols)
-
-    for i in range(number_of_iterations):
-        subplots[iplot].plot(some_x_values, some_y_values)
-        iplot += 1
-
-        if iplot == nrows*ncols:
-            plt.tight_layout()
-            pdf.savefig()
-            plt.close(fig)
-            fig, subplots = new_page(nrows, ncols)
-
     plt.tight_layout()
     pdf.savefig()
     plt.close(fig)"""
-tag = ["python", "matplotlib"]
+tag = ["python", "matplotlib", "pdfpages", "multiple", "pdf"]
 output = ""
 
 [[snippets]]
@@ -652,26 +659,7 @@ for ax, ttl, (x, y), d, lv, cmap in zip(axes, ttls, coords, data, levels, cmaps)
     ax.set_title(ttl)
     cs = ax.contourf(x, y, d[l, :, :], lv, cmap=cmap, extend='both')
     fig.colorbar(cs, ax=ax)"""
-tag = ["python", "matplotlib"]
-output = ""
-
-[[snippets]]
-description = "Matplotlib - For a part of panels"
-command = """
-for ax in axes[[0,1],[1,2]]:
-    ax.axvline(x=0.,c='k',lw=0.5)
-
-for ax in [axes[0],axes[3]]:
-    ax.set_xlim([0.,1.])"""
-tag = ["python", "matplotlib"]
-output = ""
-
-[[snippets]]
-description = "Matplotlib - For all panels"
-command = """
-for ax in axes.flat:
-    ax.invert_yaxis()"""
-tag = ["python", "matplotlib"]
+tag = ["python", "matplotlib", "zip", "plot"]
 output = ""
 
 [[snippets]]
@@ -679,7 +667,7 @@ description = "Matplotlib - Contour Fill"
 command = """
 cs = ax.contourf(x,y,data,levels=np.arange(-1.,1.1,0.1)*0.1,cmap='seismic',extend='both')
 #  cmap = 'seismic', 'bwr', 'jet'"""
-tag = ["python", "matplotlib"]
+tag = ["python", "matplotlib", "contourf"]
 output = ""
 
 [[snippets]]
@@ -688,7 +676,7 @@ command = """
 from matplotlib import ticker
 lvls = 10**np.arange(-7., -5.1, 0.1)
 ax.contourf(x,y,data,levels=lvls,locator=ticker.LogLocator())"""
-tag = ["python", "matplotlib"]
+tag = ["python", "matplotlib", "contourf", "log"]
 output = ""
 
 [[snippets]]
@@ -697,47 +685,44 @@ command = """
 import matplotlib.colors as colors
 norm = colors.SymLogNorm( linthresh=1e0, linscale=1e0, vmin=vmin, vmax=vmax)
 cs = ax.pcolormesh(k,m,var, cmap=cmap, shading='auto', norm=norm)"""
-tag = ["python", "matplotlib"]
+tag = ["python", "matplotlib", "pcolormesh", "log"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Color mesh (tiles)"
 command = """
-#
 pcm = ax.pcolormesh(x,y,var, cmap=cmap, vmin=minimum_value, vmax=maximum_value)"""
-tag = ["python", "matplotlib"]
+tag = ["python", "matplotlib", "colormesh", "tiles"]
 output = ""
 
 [[snippets]]
-description = "Matplotlib - Color bar"
+description = "Matplotlib - Color bar to an axis"
 command = """
 cbar = fig.colorbar(cs,ax=ax, location='bottom', ticks=np.arange(0,6)*20, label=\"m/s\",
                     aspect=40, pad=0.07, shrink=0.8)
-#cbar.set_label('N$^2$', loc='top')
-
-# or
-
-cbaxes = fig.add_axes([0.2, 0.05, 0.6, 0.015])  #  explicitly specify the colorbar position
-cbar = plt.colorbar(cs, ax=ax, cax=cbaxes)
-
-plt.rc('axes', labelsize=10)  #  change font size for the color bar"""
-tag = ["python", "matplotlib"]
+#cbar.set_label('N$^2$', loc='top')"""
+tag = ["python", "matplotlib", "colorbar"]
 output = ""
 
 [[snippets]]
-description = "Matplotlib - Add a separate color bar"
+description = "Matplotlib - Color bar with an separate ax (1)"
+command = """
+cbaxes = fig.add_axes([0.2, 0.05, 0.6, 0.015])
+cbar = plt.colorbar(cs, ax=ax, cax=cbaxes)"""
+tag = ["python", "matplotlib", "colorbar"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Color bar with an separate ax (2)"
 command = """
 import matplotlib as mpl
-
 ax = fig.add_axes([0.58, 0.25, 0.37, 0.02])
-
 cmap = mpl.cm.jet
 norm = mpl.colors.Normalize(vmin=np.min(lvls), vmax=np.max(lvls))
-
 fig.colorbar(mpl.cm.ScalarMappable(norm=norm, cmap=cmap),
              cax=axs1, orientation='horizontal', \\
              label=r'N$^2$ ('+ttl_scale+' s$^{-2}$)')"""
-tag = ["python", "matplotlib"]
+tag = ["python", "matplotlib", "colorbar"]
 output = ""
 
 [[snippets]]
@@ -745,7 +730,7 @@ description = "Matplotlib - Contour Lines"
 command = """
 CS = ax.contour(data, colors='k', negative_linestyles='dotted')
 axs[0].clabel(CS,CS.levels, inline=True, fontsize=10)"""
-tag = ["python", "matplotlib"]
+tag = ["python", "matplotlib", "contour", "lines"]
 output = ""
 
 [[snippets]]
@@ -755,52 +740,43 @@ cs0 = ax.imshow(var, cmap='jet', vmin=0., vmax=1., \\
                 extent=(np.min(lon),np.max(lon),np.min(lev),np.max(lev)), \\
                 aspect='auto')
 #   var = var[{lev},{lon}]"""
-tag = ["python", "matplotlib"]
+tag = ["python", "matplotlib", "imshow", "pixel"]
 output = ""
 
 [[snippets]]
-description = "Matplotlib - Line Plot"
+description = "Matplotlib - vertical line from the bottom to the top"
 command = """
-ax.plot(time,var, 'k-', lw=3.0)
-ax.plot(time,var, ':r')       #  overplot
+ax.axvline(x=0.5)"""
+tag = ["python", "matplotlib", "vertical", "line", "axvline"]
+output = ""
 
-ax.vlines(xval, ymin, ymax)   #  vertical line
-ax.hlines(yval, xmin, xmax)   #  horizontal line
-
-ax.axvline(x=0.5)             #  vertical line from the bottom to the top
-ax.axhline(y=1.2)             #  horizontal line from the bottom to the top"""
-tag = ["python", "matplotlib"]
+[[snippets]]
+description = "Matplotlib - horizontal line from the bottom to the top"
+command = """
+ax.axhline(y=1.2)"""
+tag = ["python", "matplotlib", "horizontal", "line", "axhline"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Vector Plots"
 command = """
-Q = ax.quiver(lon,lat, uvel,vvel, scale=1e2)"""
-tag = ["python", "matplotlib"]
-output = ""
-
-[[snippets]]
-description = "Matplotlib - Vector scale"
-command = """
+Q = ax.quiver(lon,lat, uvel,vvel, scale=1e2)
 qk = ax.quiverkey(Q, 0.87,0.02, 10., '10 cm s$^{-1}$', labelpos='E', coordinates='figure')"""
-tag = ["python", "matplotlib"]
+tag = ["python", "matplotlib", "vector"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Error bar"
 command = """
 ax.errorbar(x0,y0, yerr=[[errl],[errh]],fmt='o',c='k',elinewidth=2.0, capsize=3)
-
 #  Error bar is from y0-errl to y0+errh. Dot is marked at y0. Data coordinate is used."""
-tag = ["python", "matplotlib"]
+tag = ["python", "matplotlib", "error", "bar"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Create a rectangle: (x, y), width, height"
 command = """
 import matplotlib.patches as patches
-
-rect = patches.Rectangle(
     (1, 2),        # bottom-left corner
     3,             # width
     4,             # height
@@ -809,38 +785,125 @@ rect = patches.Rectangle(
     facecolor='none'
 )
 ax.add_patch(rect)"""
+tag = ["python", "matplotlib", "rectangle"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Set title"
+command = """
+ax.set_title('data at the first level', fontsize=12)
+"""
+tag = ["python", "matplotlib", "title"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Set label"
+command = """
+ax.set(xlabel='X', ylabel='Y')"""
+tag = ["python", "matplotlib", "label"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Set x range"
+command = """
+ax.set_xlim([100.,150.])"""
+tag = ["python", "matplotlib", "x", "range", "xlim"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Set y range"
+command = """
+ax.set_ylim([-10.,10.])"""
+tag = ["python", "matplotlib", "y", "range", "ylim"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Invert y axis"
+command = """
+ax.invert_yaxis()"""
+tag = ["python", "matplotlib", "invert", "y"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Set x axis in log scale"
+command = """
+ax.set_xscale('log')"""
+tag = ["python", "matplotlib", "axis", "log"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Control axis labels"
+command = """
+ax.xaxis.set_ticks(np.arange(start, end, stepsize))"""
+tag = ["python", "matplotlib", "axis", "label"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Tick label format (like 1.2 x 10^{-1})"
+command = """
+ax.ticklabel_format(style='sci', axis='x', scilimits=(0,0))"""
+tag = ["python", "matplotlib", "label", "format"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Show ticks on both sides"
+command = """
+ax.tick_params(right=True,top=True,which='both')"""
+tag = ["python", "matplotlib", "ticks", "both"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Set x tick labels"
+command = """
+ax.set_xticklabels(['Jan','Feb','Mar','Apr','May','Jun'])"""
+tag = ["python", "matplotlib", "tick", "labels"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Change label font size"
+command = """
+ax.xaxis.label.set_fontsize(12)"""
+tag = ["python", "matplotlib", "label", "size"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Change tick font size"
+command = """
+ax.xaxis.set_tick_params(labelsize=10)"""
+tag = ["python", "matplotlib", "tick", "size"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Change axis label font size"
+command = """
+ax.set_ylabel('Depth (m)', fontsize=8)"""
+tag = ["python", "matplotlib", "label", "size"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - Add text"
+command = """
+ax.text(100.,40.,'some label')                 #  in data coordinates
+plt.gcf().text(0.7, 0.15, text, fontsize=12)   #  in figure coordinates
+plt.figtext(0.60, 0.1, 'XXX', fontsize=14)     #  in figure coordinates
+"""
+tag = ["python", "matplotlib", "add", "text"]
+output = ""
+
+[[snippets]]
+description = "Matplotlib - "
+command = """
+"""
 tag = ["python", "matplotlib"]
 output = ""
+
+
+
+
 
 [[snippets]]
 description = "Matplotlib - Axis/Title Settings"
 command = """
-ax.set_title('data at the first level', fontsize=12)        #  title
-ax.set(xlabel='X', ylabel='Y')                              #  x and y axis labels
-ax.set_xlim([100.,150.])                                    #  x range
-ax.set_ylim([-10.,10.])                                     #  y range
-ax.invert_yaxis()
-ax.set_xscale('log')
-ax.xaxis.set_ticks(np.arange(start, end, stepsize))         #  control axis labels
-ax.ticklabel_format(style='sci', axis='x', scilimits=(0,0)) #  tick label format (like 1.2 x 10^{-1})
-ax.yaxis.set_ticks_position('both')                         #  show ticks on both sides
-ax.set_xticks(np.arange(0,12,2))                            #  set x tick points
-ax.set_xticklabels(['Jan','Feb','Mar','Apr','May','Jun',\\
-                    'Jul','Aug','Sep','Oct','Nov','Dec'])   #  set x tick labels
-ax.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
-                                                            #  ncecessary to add ticks to log scale
-ax.title.set_fontsize(15)                                   #  change title font size
-ax.xaxis.label.set_fontsize(12)                             #  change label font size
-ax.xaxis.set_tick_params(labelsize=10)                      #  change tick font size
-ax.set_ylabel('Depth (m)', fontsize=8)                      #  change axis label font size
-ax.text(0.05, 0.95, '(a)', transform=ax.transAxes,fontsize=16, fontweight='bold', va='top') #  add label
-
-ax.tick_params(right=True,top=True,which='both')            #  show tickes on both sides
-
-ax.text(100.,40.,'some label')                              #  add text in data coordinates
-plt.gcf().text(0.7, 0.15, text, fontsize=12)                #  add text in figure coordinates
-plt.figtext(0.60, 0.1, 'XXX', fontsize=14)                  #  add text in figure coordinates
-
 import datetime                                             #  set time range
 ax.set_xlim([datetime.date(2014,1,26), datetime.date(2014,2,1)])
 ax.set_xlim([np.datetime64('2014-01-26'), \\
@@ -861,7 +924,7 @@ import cartopy.mpl.ticker as cticker                        #   Longitude labels
 lon_formatter = cticker.LongitudeFormatter()
 ax.set_xticks(np.arange(30,180,30))
 ax.xaxis.set_major_formatter(lon_formatter)
-                             
+
 LonTicks = np.arange(70,91,10)                              #   Longitude labels by hand
 LonTickNames = np.char.mod('%d', LonTicks)
 LonTickNames = [s + '\\N{degree sign}E' for s in LonTickNames]
