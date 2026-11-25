@@ -78,52 +78,77 @@ output = ""
 description = "Plain python - Print format - for scalar"
 command = """
 print(f'scalar = {scalar:6.2f} m s^-1')"""
-tag = ["python", "basic", "format"]
+tag = ["python", "basic", "format", "scalar"]
 output = ""
 
 [[snippets]]
 description = "Plain python - Print format - for array"
 command = """
 print(\"array = [\"+\", \".join(f\"{v:.2f}\" for v in array[:])+\"]\")"""
-tag = ["python", "basic", "array"]
+tag = ["python", "basic", "format", "array"]
+output = ""
+
+[[snippets]]
+description = "Plain python - Print format - for tuple"
+command = """
+print('this is a tuple {0}'.format(thetuple))"""
+tag = ["python", "basic", "format", "tuple"]
+output = ""
+
+[[snippets]]
+description = "Plain python - Print format - in column"
+command = """
+for data in x:
+    print '{:9.3f}'.format(data)"""
+tag = ["python", "basic", "format", "colomn"]
+output = ""
+
+[[snippets]]
+description = "Plain python - Print format - in row"
+command = """
+import sys
+for data in x:
+    sys.stdout.write('{:9.3f}'.format(data))"""
+tag = ["python", "basic", "format", "row"]
+output = ""
+
+[[snippets]]
+description = "Plain python - Print format - array to array"
+command = """
+str_arr = [f\"{x:.2f}\" for x in arr]"""
+tag = ["python", "basic", "format", "array"]
+output = ""
+
+[[snippets]]
+description = "Plain python - Print format - 5e-6 ---> \"5 x 10^-6\""
+command = """
+val = 5e-6
+m, e = f\"{val:.2e}\".split(\"e\")
+string = rf\"{float(m)} $\\times$ 10$^{{{int(e)}}}$\""""
+tag = ["python", "basic", "format", "scientific"]
+output = ""
+
+[[snippets]]
+description = "Plain python - Print format - Same width for both polarities"
+command = """
+print(f\"{1.0e-5: .1e}\")
+print(f\"{-1.0e-5: .1e}\")
+# 1.0e-05
+#-1.0e-05"""
+tag = ["python", "basic", "format", "sign"]
 output = ""
 
 
 [[snippets]]
 description = "Plain python - Print format"
 command = """
-from decimal import Decimal
-'%.2e' % Decimal('40800000000.00000000000000')
-
-print('this is a tuple {0}'.format(thetuple))
-
-#
-
-for data in x:
-    print '{:9.3f}'.format(data)             # To print the data in column
-
-import sys
-for data in x:
-    sys.stdout.write('{:9.3f}'.format(data)) # To print the data in row
-
-str_arr = [f\"{x:.2f}\" for x in arr]          # A real number array to a string array
-
-val = 5e-6
-m, e = f\"{val:.2e}\".split(\"e\")
-string = rf\"{float(m)} $\\times$ 10$^{{{int(e)}}}$\"  #   5e-6 ---> \"5 x 10^-6\"
-
-print(f\"{1.0e-5: .1e}\")                      # Same width for both polarities
-print(f\"{-1.0e-5: .1e}\")
-# 1.0e-05
-#-1.0e-05
-
-{x:5}\t    5 letters, right aligned
+{x:5}\t   5 letters, right aligned
 {x:<5}\t  5 letters, left aligned
 {x:^5}\t  5 letters, center aligned
 {x:>5}\t  5 letters, right aligned (explicit)
 {x:05}\t  5 letters, pad zeros
 {x:8.2f}\t8 letters, a floating-point number with two decimal places"""
-tag = ["python", "basic"]
+tag = ["python", "basic", "format"]
 output = ""
 
 [[snippets]]
@@ -136,38 +161,57 @@ if A_acc is None:
 else:
     A_acc = np.append(A_acc, A)   # Try to append to existing array A
     A_acc += A                    # Or add A to A_acc"""
-tag = ["python", "basic"]
+tag = ["python", "basic", "loop", "append"]
 output = ""
 
 [[snippets]]
-description = "Plain python - for loop"
+description = "Plain python - simple for loop"
 command = """
-  #   simple loop
 for i in range(nx):
-    (do what you want)
+    (do what you want)"""
+tag = ["python", "basic", "for", "loop"]
+output = ""
 
-  #   enumerate arrays
+[[snippets]]
+description = "Plain python - for loop - enumerate arrays"
+command = """
 for i, arr in enumerate([A, B]):
     #   arr = A for i = 0
-    #   arr = B for i = 1
+    #   arr = B for i = 1"""
+tag = ["python", "basic", "for", "loop", "enumerate"]
+output = ""
 
-  #   zip arrays
+[[snippets]]
+description = "Plain python - for loop - zip arrays"
+command = """
 for v1, v2, v3  in zip((A, B), (C, D), (E,F)):
     #  v1,v2,v3 = A,C,E for the first loop,
-    #  v1,v2,v3 = B,D,F for the second
+    #  v1,v2,v3 = B,D,F for the second"""
+tag = ["python", "basic", "for", "loop", "zip"]
+output = ""
 
-  #   enumerate a pair of arrays
+[[snippets]]
+description = "Plain python - for loop - enumerate a pair of arrays"
+command = """
 for i, (arr1, arr2) in enumerate(zip((A,B),(C,D))):
     #  arr1 = A and arr2 = C for i = 0
-    #  arr1 = B and arr2 = D for i = 0
+    #  arr1 = B and arr2 = D for i = 0"""
+tag = ["python", "basic", "for", "loop", "enumerate"]
+output = ""
 
-  #   enumerate and zip
+[[snippets]]
+description = "Plain python - for loop - enumerate and zip"
+command = """
 for i, (a, b) in enumerate(zip(A, B)):
     print(i, a, b)
     #     \"a\" and \"b\" are the elements of A and B at position i.
-    #     zip(A, B) produces pairs (A[0], B[0]), (A[1], B[1]), ...
+    #     zip(A, B) produces pairs (A[0], B[0]), (A[1], B[1]), ..."""
+tag = ["python", "basic", "for", "loop", "enumerate", "zip"]
+output = ""
 
-  #   zip() + unpack (*)
+[[snippets]]
+description = "Plain python - for loop - zip() + unpack (*)"
+command = """
 for iω1, iω2 in zip(*iω):
 #   For iω = [[1, 2, 3],
 #             [10, 20, 30]],
@@ -175,7 +219,7 @@ for iω1, iω2 in zip(*iω):
 #   then  iω1=1  iω2=10  (first loop)
 #         iω1=2  iω2=20  (second loop)
 #         iω1=3  iω2=30  (third loop)"""
-tag = ["python", "basic"]
+tag = ["python", "basic", "for", "loop", "zip", "unpack"]
 output = ""
 
 [[snippets]]
@@ -199,16 +243,15 @@ output = ""
 description = "Plain python - Raise error and stop"
 command = """
 raise ValueError(\"Invalid input!\")"""
-tag = ["python", "basic"]
+tag = ["python", "basic", "raise", "error"]
 output = ""
 
 [[snippets]]
 description = "Plain python - Script entry point"
 command = """
-#
 if __name__ == \"__main__\":
     sys.exit(main())"""
-tag = ["python", "basic"]
+tag = ["python", "basic", "entry", "script"]
 output = ""
 
 [[snippets]]
@@ -246,7 +289,7 @@ print(s)
 #  Sample(count=0, value=0.0, name='', scores=[], array=array([], dtype=float64))
 
 #  @dataclass(frozen=True)      Cannot be overwritten"""
-tag = ["python", "basic"]
+tag = ["python", "basic", "dataclass"]
 output = ""
 
 [[snippets]]
@@ -259,7 +302,7 @@ class Var:
 
     def describe(self):
         return f\"{self.string} has value {self.number}\""""
-tag = ["python", "basic"]
+tag = ["python", "basic", "class"]
 output = ""
 
 [[snippets]]
@@ -276,7 +319,7 @@ class test_class:
 p1, p2 = 10., 100.
 test1 = test_class(p1)     #  set p1
 result = test1.func(p2)    #  compute p1 + p2 (p1 is set beforehand)"""
-tag = ["python", "basic"]
+tag = ["python", "basic", "class"]
 output = ""
 
 [[snippets]]
@@ -286,9 +329,9 @@ import sys, pathlib, os
 
 MY_WORK_ROOT = str( pathlib.Path(os.environ[\"MY_WORK_ROOT\"]) )  #  Get the environment variable
 
-current_dir = os.getcwd()                      #  Get current directory path
+current_dir = os.getcwd()                          #  Get current directory path
 OUT_DIR = current_dir.replace(\"code\", \"data\")  #  Replace \"code\" with \"data\""""
-tag = ["python", "basic"]
+tag = ["python", "basic", "environmental", "path"]
 output = ""
 
 [[snippets]]
@@ -299,85 +342,48 @@ subprocess.run(
     [\"curl\", \"-d\", \"test\", \"https://ntfy.sh/EA\"],
     check=True
 )"""
-tag = ["python", "basic"]
+tag = ["python", "basic", "nortify", "noritification"]
 output = ""
 
-[[snippets]]
-description = "Numpy - Imports"
-command = """
-import numpy as np"""
-tag = ["python", "numpy"]
-output = ""
+#        Numpy
 
 [[snippets]]
-description = "Numpy - Create an array"
+description = "Numpy - Create an array - arange"
 command = """
-x = [10., 20.00, 30., 40.0, 50.000, 60.00, 70., 80.00, 90.000]
-
-y2 = np.array([[0., 0.7, 1., 0.7, 0., -0.7, -1., -0.7, 0.],  \\
-               [2., 2.7, 3., 2.7, 2.,  1.3,  1.,  1.3, 2.],  \\
-               [4., 4.7, 5., 4.7, 4.,  3.3,  3.,  3.3, 4.]], \\
-               'f')
-
+a = np.arange(1,8,1)
 x = np.arange(2,3,0.1,dtype=float)
-# [2.  2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9]
+# [2.  2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9]"""
+tag = ["python", "numpy", "arange"]
+output = ""
 
+[[snippets]]
+description = "Numpy - Create an array - linspace"
+command = """
 x = np.linspace(1., 4., 6)
-# [1.  1.6 2.2 2.8 3.4 4. ]
-
-x = np.zeros((2,3))
-# [[0. 0. 0.]
-#  [0. 0. 0.]]
-
-
->>> a = numpy.arange(1,8,1)
->>> print(a)
-[1 2 3 4 5 6 7]
->>> b = a > 3
->>> print(b)
-[False False False  True  True  True  True]
->>> print(a[b])
-[4 5 6 7]"""
-tag = ["python", "numpy"]
+# [1.  1.6 2.2 2.8 3.4 4. ]"""
+tag = ["python", "numpy", "linspace"]
 output = ""
 
 [[snippets]]
 description = "Numpy - Find index using conditions"
 command = """
 k = np.argwhere((lev >= 200.) & (lev <= 800.))[:,0]
-
-i = np.squeeze( np.nonzero( ~np.isnan(vvel[:]) ) )    #   1D array"""
-tag = ["python", "numpy"]
-output = ""
-
-[[snippets]]
-description = "Numpy - Multiply 2D array with 1D array"
-command = """
-a = numpy.array([[2,3,2],[5,6,1]])
-b = numpy.array([3,5])
-c = a * b[:, None]"""
-tag = ["python", "numpy"]
+"""
+tag = ["python", "numpy", "argwhere", "index"]
 output = ""
 
 [[snippets]]
 description = "Numpy - logical_or for many conditions"
 command = """
 np.logical_or.reduce((x, y, z))"""
-tag = ["python", "numpy"]
-output = ""
-
-[[snippets]]
-description = "Numpy - Define NaN arrays at once"
-command = """
-arr1,arr2,arr3 = np.ones((3,len(time),len(lat),len(lon))) *np.nan"""
-tag = ["python", "numpy"]
+tag = ["python", "numpy", "logical", "or"]
 output = ""
 
 [[snippets]]
 description = "Numpy - Replace zero with nan"
 command = """
 var[var == 0.] = np.nan"""
-tag = ["python", "numpy"]
+tag = ["python", "numpy", "replace", "zero", "nan"]
 output = ""
 
 [[snippets]]
@@ -386,7 +392,7 @@ command = """
 a = numpy.array([[2,3,2],[5,6,1]])
 b = numpy.array([3,5])
 c = a * b[:, np.newaxis]"""
-tag = ["python", "numpy"]
+tag = ["python", "numpy", "array", "vector", "product", "multiplication"]
 output = ""
 
 [[snippets]]
@@ -400,7 +406,7 @@ running_avg = np.convolve(data, weights, mode='valid')
 #
 print(\"Running average:\", running_avg)
 #  Running average: [2. 3. 4. 5. 6. 7. 8. 9.]"""
-tag = ["python", "numpy"]
+tag = ["python", "numpy", "running", "average", "mean"]
 output = ""
 
 [[snippets]]
@@ -410,14 +416,14 @@ f = np.array([1., 2., 4.0, 7.0, 11., 16.], dtype=float)
 x = np.array([0., 1., 1.5, 3.5,  4.,  6.], dtype=float)
 np.gradient(f, x)
 # Result: array([1. ,  3. ,  3.5,  6.7,  6.9,  2.5])"""
-tag = ["python", "numpy"]
+tag = ["python", "numpy", "gradient"]
 output = ""
 
 [[snippets]]
 description = "Numpy - Unwrap the phase"
 command = """
 phase_unwrapped = np.unwrap(phase, period=360.)"""
-tag = ["python", "numpy"]
+tag = ["python", "numpy", "unwrap", "phase"]
 output = ""
 
 [[snippets]]
@@ -426,9 +432,8 @@ command = """
 reference_date = np.datetime64('2010-01-01')
 time_in = np.array(time[0])                     #   I assume 'time' is read by xarray
 dt = np.timedelta64(time_in-reference_date,'h')
-
 print(np.datetime64(time,'D'))                  #   omit hour/minute/second"""
-tag = ["python", "numpy"]
+tag = ["python", "numpy", "datetime"]
 output = ""
 
 [[snippets]]
@@ -445,7 +450,7 @@ tmp1 = np.array(var[:,:ny1,:]).reshape(len(time),-1,dy,len(lon))  #   Second axi
 var_avg = np.nanmean(tmp1,axis=3)
 
 var_avg = var[:nx1].reshape(-1, dx).mean(axis=1) # For 1D array"""
-tag = ["python", "numpy"]
+tag = ["python", "numpy", "box", "average", "mean"]
 output = ""
 
 [[snippets]]
@@ -453,7 +458,7 @@ description = "Numpy - Fill NaN values by linear interpolation"
 command = """
 inan = np.isnan(var)                                     #  logical array
 var[inan] = np.interp(lon[inan], lon[~inan], var[~inan])"""
-tag = ["python", "numpy"]
+tag = ["python", "numpy", "fill", "nan", "interpolate"]
 output = ""
 
 [[snippets]]
@@ -481,7 +486,7 @@ for i in range(nsamples):                                #                     d
         avg[i], std[i] = np.nan, np.nan
     else:
         avg[i], std[i] = np.mean(result[0:i]), np.std(result[0:i])"""
-tag = ["python", "numpy"]
+tag = ["python", "numpy", "bootstrap"]
 output = ""
 
 [[snippets]]
@@ -495,7 +500,7 @@ for i in range(nsamples):
     result[i] = some_computation(tmp_sample)
 
 avg, std = np.mean(result), np.std(result)               #  Average and standard deviation"""
-tag = ["python", "numpy"]
+tag = ["python", "numpy", "jackknife"]
 output = ""
 
 [[snippets]]
@@ -515,7 +520,7 @@ def definite_integral(xcoord,xstrt,xend,yvar):
     result = np.trapz( yvar1[i], xcoord1[i] )                              #  integrate from xstrt to xend
 
     return result"""
-tag = ["python", "numpy"]
+tag = ["python", "numpy", "definite", "integral"]
 output = ""
 
 [[snippets]]
@@ -529,22 +534,24 @@ x_avail = x[ ~np.isnan(y) ]   #   x for data
 y_avail = y[ ~np.isnan(y) ]   #   data
 
 y = np.interp(x_intpl, x_avail,y_avail, left=np.nan, right=np.nan)"""
-tag = ["python", "numpy"]
+tag = ["python", "numpy", "linear", "interpolation"]
 output = ""
 
 [[snippets]]
 description = "Numpy - Timedelta"
 command = """
 np.timedelta64(10,'D')"""
-tag = ["python", "numpy"]
+tag = ["python", "numpy", "timedelta"]
 output = ""
 
 [[snippets]]
 description = "Numpy - Convert numpy array to a string array"
 command = """
 a_str = np.char.mod('%d', np.arange(70,91,10))"""
-tag = ["python", "numpy"]
+tag = ["python", "numpy", "convert", "string"]
 output = ""
+
+#        Matplotlib
 
 [[snippets]]
 description = "Matplotlib - Imports and global settings"
