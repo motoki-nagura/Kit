@@ -226,3 +226,11 @@ vim.opt.listchars = {
   trail = "·",
   tab = "→ ",
 }
+
+-- =========================================
+-- Help message
+-- =========================================
+vim.keymap.set("n", "<leader>hp", function()
+  require("config.cheatsheet").open()
+end, { desc = "Show my keymaps" })
+
