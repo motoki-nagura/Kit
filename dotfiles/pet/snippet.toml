@@ -3,9 +3,7 @@
 
 [[snippets]]
 description = "Python - Output to a text file"
-command = """
-texts = ['line 1', 'line2']
-
+command = """texts = ['line 1', 'line2']
 with open('out.txt','w') as fa:
     for text in texts:
         fa.write(text)
@@ -15,8 +13,7 @@ output = ""
 
 [[snippets]]
 description = "Python - Sort one array by another array"
-command = """
-inds = arr1.argsort()
+command = """inds = arr1.argsort()
 arr1_sorted = arr1[inds]
 arr2_sorted = arr2[inds,:]"""
 tag = ["python", "basic", "sort"]
@@ -24,16 +21,14 @@ output = ""
 
 [[snippets]]
 description = "Python - Last element"
-command = """
-some_list[-1]          #   last element
+command = """some_list[-1]          #   last element
 some_list[-n]          #   n-th to last element"""
 tag = ["python", "basic", "index"]
 output = ""
 
 [[snippets]]
 description = "Python - read user defined functions"
-command = """
-import sys
+command = """import sys
 sys.path.insert(0,'/S/data01/G5018/c0538/code/sub/sub')
 from subs import fft_spectrum"""
 tag = ["python", "basic", "function"]
@@ -41,15 +36,13 @@ output = ""
 
 [[snippets]]
 description = "Python - Broadcasting"
-command = """
-var_2d = np.ones((len(z),len(x))) * var_1d[:,np.newaxis]  #   var_1d[{z}] to var_2d[{z},{x}]"""
+command = """var_2d = np.ones((len(z),len(x))) * var_1d[:,np.newaxis]  #   var_1d[{z}] to var_2d[{z},{x}]"""
 tag = ["python", "basic", "broadcasting"]
 output = ""
 
 [[snippets]]
 description = "Python - Remove duplicated elements"
-command = """
-var_out = list( {d:None for d in var}.keys() )
+command = """var_out = list( {d:None for d in var}.keys() )
 
 test_list = list(set(test_list))"""
 tag = ["python", "basic"]
@@ -57,16 +50,14 @@ output = ""
 
 [[snippets]]
 description = "Python - List comprehension"
-command = """
-tmp = ['xx_{}'.format(x) for x in range(1,5)]
+command = """tmp = ['xx_{}'.format(x) for x in range(1,5)]
 #  ['xx_1', 'xx_2', 'xx_3', 'xx_4']"""
 tag = ["python", "basic", "list"]
 output = ""
 
 [[snippets]]
 description = "Python - Options"
-command = """
-MODE = \"b\"
+command = """MODE = \"b\"
 
 X = { \"a\": 1.0,
       \"b\": 2.0,
@@ -76,37 +67,32 @@ output = ""
 
 [[snippets]]
 description = "Python - Print format - for scalar"
-command = """
-print(f'scalar = {scalar:6.2f} m s^-1')"""
+command = """print(f'scalar = {scalar:6.2f} m s^-1')"""
 tag = ["python", "basic", "format", "scalar"]
 output = ""
 
 [[snippets]]
 description = "Python - Print format - for array"
-command = """
-print(\"array = [\"+\", \".join(f\"{v:.2f}\" for v in array[:])+\"]\")"""
+command = """print(\"array = [\"+\", \".join(f\"{v:.2f}\" for v in array[:])+\"]\")"""
 tag = ["python", "basic", "format", "array"]
 output = ""
 
 [[snippets]]
 description = "Python - Print format - for tuple"
-command = """
-print('this is a tuple {0}'.format(thetuple))"""
+command = """print('this is a tuple {0}'.format(thetuple))"""
 tag = ["python", "basic", "format", "tuple"]
 output = ""
 
 [[snippets]]
 description = "Python - Print format - in column"
-command = """
-for data in x:
+command = """for data in x:
     print '{:9.3f}'.format(data)"""
 tag = ["python", "basic", "format", "colomn"]
 output = ""
 
 [[snippets]]
 description = "Python - Print format - in row"
-command = """
-import sys
+command = """import sys
 for data in x:
     sys.stdout.write('{:9.3f}'.format(data))"""
 tag = ["python", "basic", "format", "row"]
@@ -114,15 +100,13 @@ output = ""
 
 [[snippets]]
 description = "Python - Print format - array to array"
-command = """
-str_arr = [f\"{x:.2f}\" for x in arr]"""
+command = """str_arr = [f\"{x:.2f}\" for x in arr]"""
 tag = ["python", "basic", "format", "array"]
 output = ""
 
 [[snippets]]
 description = "Python - Print format - 5e-6 ---> \"5 x 10^-6\""
-command = """
-val = 5e-6
+command = """val = 5e-6
 m, e = f\"{val:.2e}\".split(\"e\")
 string = rf\"{float(m)} $\\times$ 10$^{{{int(e)}}}$\""""
 tag = ["python", "basic", "format", "scientific"]
@@ -130,8 +114,7 @@ output = ""
 
 [[snippets]]
 description = "Python - Print format - Same width for both polarities"
-command = """
-print(f\"{1.0e-5: .1e}\")
+command = """print(f\"{1.0e-5: .1e}\")
 print(f\"{-1.0e-5: .1e}\")
 # 1.0e-05
 #-1.0e-05"""
@@ -141,8 +124,7 @@ output = ""
 
 [[snippets]]
 description = "Python - Print format"
-command = """
-{x:5}\t   5 letters, right aligned
+command = """{x:5}\t   5 letters, right aligned
 {x:<5}\t  5 letters, left aligned
 {x:^5}\t  5 letters, center aligned
 {x:>5}\t  5 letters, right aligned (explicit)
@@ -153,8 +135,7 @@ output = ""
 
 [[snippets]]
 description = "Python - Create or append/add to an array"
-command = """
-A_acc = None
+command = """A_acc = None
 
 if A_acc is None:
     A_acc = A   # A doesn't exist yet, create it
@@ -166,16 +147,14 @@ output = ""
 
 [[snippets]]
 description = "Python - simple for loop"
-command = """
-for i in range(nx):
+command = """for i in range(nx):
     (do what you want)"""
 tag = ["python", "basic", "for", "loop"]
 output = ""
 
 [[snippets]]
 description = "Python - for loop - enumerate arrays"
-command = """
-for i, arr in enumerate([A, B]):
+command = """for i, arr in enumerate([A, B]):
     #   arr = A for i = 0
     #   arr = B for i = 1"""
 tag = ["python", "basic", "for", "loop", "enumerate"]
@@ -183,8 +162,7 @@ output = ""
 
 [[snippets]]
 description = "Python - for loop - zip arrays"
-command = """
-for v1, v2, v3  in zip((A, B), (C, D), (E,F)):
+command = """for v1, v2, v3  in zip((A, B), (C, D), (E,F)):
     #  v1,v2,v3 = A,C,E for the first loop,
     #  v1,v2,v3 = B,D,F for the second"""
 tag = ["python", "basic", "for", "loop", "zip"]
@@ -192,8 +170,7 @@ output = ""
 
 [[snippets]]
 description = "Python - for loop - enumerate a pair of arrays"
-command = """
-for i, (arr1, arr2) in enumerate(zip((A,B),(C,D))):
+command = """for i, (arr1, arr2) in enumerate(zip((A,B),(C,D))):
     #  arr1 = A and arr2 = C for i = 0
     #  arr1 = B and arr2 = D for i = 0"""
 tag = ["python", "basic", "for", "loop", "enumerate"]
@@ -201,8 +178,7 @@ output = ""
 
 [[snippets]]
 description = "Python - for loop - enumerate and zip"
-command = """
-for i, (a, b) in enumerate(zip(A, B)):
+command = """for i, (a, b) in enumerate(zip(A, B)):
     print(i, a, b)
     #     \"a\" and \"b\" are the elements of A and B at position i.
     #     zip(A, B) produces pairs (A[0], B[0]), (A[1], B[1]), ..."""
@@ -211,8 +187,7 @@ output = ""
 
 [[snippets]]
 description = "Python - for loop - zip() + unpack (*)"
-command = """
-for iω1, iω2 in zip(*iω):
+command = """for iω1, iω2 in zip(*iω):
 #   For iω = [[1, 2, 3],
 #             [10, 20, 30]],
 #
@@ -224,8 +199,7 @@ output = ""
 
 [[snippets]]
 description = "Python - if statement"
-command = """
-if age >= 18 and has_ticket:
+command = """if age >= 18 and has_ticket:
 
 if is_member or has_coupon:
 
@@ -241,23 +215,20 @@ output = ""
 
 [[snippets]]
 description = "Python - Raise error and stop"
-command = """
-raise ValueError(\"Invalid input!\")"""
+command = """raise ValueError(\"Invalid input!\")"""
 tag = ["python", "basic", "raise", "error"]
 output = ""
 
 [[snippets]]
 description = "Python - Script entry point"
-command = """
-if __name__ == \"__main__\":
+command = """if __name__ == \"__main__\":
     sys.exit(main())"""
 tag = ["python", "basic", "entry", "script"]
 output = ""
 
 [[snippets]]
 description = "Python - dataclass"
-command = """
-from dataclasses import dataclass, field
+command = """from dataclasses import dataclass, field
 import numpy as np
 
 @dataclass(slots=True)
@@ -294,8 +265,7 @@ output = ""
 
 [[snippets]]
 description = "Python - Class"
-command = """
-class Var:
+command = """class Var:
     def __init__(self, number, string):
         self.number = number
         self.string = string
@@ -307,8 +277,7 @@ output = ""
 
 [[snippets]]
 description = "Python - Share variables between functions using class"
-command = """
-class test_class:
+command = """class test_class:
     def __init__(self,p1):
         self.p1 = p1
 
@@ -324,8 +293,7 @@ output = ""
 
 [[snippets]]
 description = "Python - Get the work path"
-command = """
-import sys, pathlib, os
+command = """import sys, pathlib, os
 
 MY_WORK_ROOT = str( pathlib.Path(os.environ[\"MY_WORK_ROOT\"]) )  #  Get the environment variable
 
@@ -336,8 +304,7 @@ output = ""
 
 [[snippets]]
 description = "Python - Smartphone Notifier"
-command = """
-import subprocess
+command = """import subprocess
 subprocess.run(
     [\"curl\", \"-d\", \"test\", \"https://ntfy.sh/EA\"],
     check=True
@@ -349,8 +316,7 @@ output = ""
 
 [[snippets]]
 description = "Numpy - Create an array - arange"
-command = """
-a = np.arange(1,8,1)
+command = """a = np.arange(1,8,1)
 x = np.arange(2,3,0.1,dtype=float)
 # [2.  2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9]"""
 tag = ["python", "numpy", "arange"]
@@ -358,38 +324,33 @@ output = ""
 
 [[snippets]]
 description = "Numpy - Create an array - linspace"
-command = """
-x = np.linspace(1., 4., 6)
+command = """x = np.linspace(1., 4., 6)
 # [1.  1.6 2.2 2.8 3.4 4. ]"""
 tag = ["python", "numpy", "linspace"]
 output = ""
 
 [[snippets]]
 description = "Numpy - Find index using conditions"
-command = """
-k = np.argwhere((lev >= 200.) & (lev <= 800.))[:,0]
+command = """k = np.argwhere((lev >= 200.) & (lev <= 800.))[:,0]
 """
 tag = ["python", "numpy", "argwhere", "index"]
 output = ""
 
 [[snippets]]
 description = "Numpy - logical_or for many conditions"
-command = """
-np.logical_or.reduce((x, y, z))"""
+command = """np.logical_or.reduce((x, y, z))"""
 tag = ["python", "numpy", "logical", "or"]
 output = ""
 
 [[snippets]]
 description = "Numpy - Replace zero with nan"
-command = """
-var[var == 0.] = np.nan"""
+command = """var[var == 0.] = np.nan"""
 tag = ["python", "numpy", "replace", "zero", "nan"]
 output = ""
 
 [[snippets]]
 description = "Numpy - Multiply 2D array by 1D array"
-command = """
-a = numpy.array([[2,3,2],[5,6,1]])
+command = """a = numpy.array([[2,3,2],[5,6,1]])
 b = numpy.array([3,5])
 c = a * b[:, np.newaxis]"""
 tag = ["python", "numpy", "array", "vector", "product", "multiplication"]
@@ -397,8 +358,7 @@ output = ""
 
 [[snippets]]
 description = "Numpy - Running average"
-command = """
-data = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+command = """data = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 #
 window_size = 3
 weights = np.ones(window_size) / window_size
@@ -411,8 +371,7 @@ output = ""
 
 [[snippets]]
 description = "Numpy - Gradient"
-command = """
-f = np.array([1., 2., 4.0, 7.0, 11., 16.], dtype=float)
+command = """f = np.array([1., 2., 4.0, 7.0, 11., 16.], dtype=float)
 x = np.array([0., 1., 1.5, 3.5,  4.,  6.], dtype=float)
 np.gradient(f, x)
 # Result: array([1. ,  3. ,  3.5,  6.7,  6.9,  2.5])"""
@@ -421,15 +380,13 @@ output = ""
 
 [[snippets]]
 description = "Numpy - Unwrap the phase"
-command = """
-phase_unwrapped = np.unwrap(phase, period=360.)"""
+command = """phase_unwrapped = np.unwrap(phase, period=360.)"""
 tag = ["python", "numpy", "unwrap", "phase"]
 output = ""
 
 [[snippets]]
 description = "Numpy - datetime64"
-command = """
-reference_date = np.datetime64('2010-01-01')
+command = """reference_date = np.datetime64('2010-01-01')
 time_in = np.array(time[0])                     #   I assume 'time' is read by xarray
 dt = np.timedelta64(time_in-reference_date,'h')
 print(np.datetime64(time,'D'))                  #   omit hour/minute/second"""
@@ -438,8 +395,7 @@ output = ""
 
 [[snippets]]
 description = "Numpy - Box averaging"
-command = """
-dx = 5                       #  Average every 5 data in lon for var[{time},{lev},{lon}]
+command = """dx = 5                       #  Average every 5 data in lon for var[{time},{lev},{lon}]
 nx1 = (len(lon) //dx) *dx
 tmp1 = np.array(var[:,:,:nx1]).reshape(len(time),len(lat),-1,dx)  #   First axis
 var_avg = np.nanmean(tmp1,axis=3)
@@ -455,16 +411,14 @@ output = ""
 
 [[snippets]]
 description = "Numpy - Fill NaN values by linear interpolation"
-command = """
-inan = np.isnan(var)                                     #  logical array
+command = """inan = np.isnan(var)                                     #  logical array
 var[inan] = np.interp(lon[inan], lon[~inan], var[~inan])"""
 tag = ["python", "numpy", "fill", "nan", "interpolate"]
 output = ""
 
 [[snippets]]
 description = "Numpy - Bootstrap method"
-command = """
-nsamples = 5000                                          #  Number of samples
+command = """nsamples = 5000                                          #  Number of samples
 sample_size = 100                                        #  Number of data in one sample
 
 np.random.seed()
@@ -491,8 +445,7 @@ output = ""
 
 [[snippets]]
 description = "Numpy - Jackknife method (delete-1)"
-command = """
-sample_size = len(input_data)                            #  Number of data in one sample
+command = """sample_size = len(input_data)                            #  Number of data in one sample
 
 result = np.zeros(sample_size)                           #  Iterate computation for all the samples
 for i in range(nsamples):
@@ -505,8 +458,7 @@ output = ""
 
 [[snippets]]
 description = "Numpy - Definite integral from data"
-command = """
-def definite_integral(xcoord,xstrt,xend,yvar):
+command = """def definite_integral(xcoord,xstrt,xend,yvar):
 #   Integral yvar from xstrt to xend
     import numpy as np
     from scipy.interpolate import interp1d
@@ -525,8 +477,7 @@ output = ""
 
 [[snippets]]
 description = "Numpy - Linear interpolation"
-command = """
-#         y[:] includes NaN
+command = """#         y[:] includes NaN
 
 x = np.arange(len(y))
 x_intpl = x[  np.isnan(y) ]   #   x to be interpolated
@@ -539,15 +490,13 @@ output = ""
 
 [[snippets]]
 description = "Numpy - Timedelta"
-command = """
-np.timedelta64(10,'D')"""
+command = """np.timedelta64(10,'D')"""
 tag = ["python", "numpy", "timedelta"]
 output = ""
 
 [[snippets]]
 description = "Numpy - Convert numpy array to a string array"
-command = """
-a_str = np.char.mod('%d', np.arange(70,91,10))"""
+command = """a_str = np.char.mod('%d', np.arange(70,91,10))"""
 tag = ["python", "numpy", "convert", "string"]
 output = ""
 
@@ -555,39 +504,34 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - Imports"
-command = """
-import matplotlib.pyplot as plt
+command = """import matplotlib.pyplot as plt
 import matplotlib as mpl"""
 tag = ["python", "matplotlib", "import"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Change global font type"
-command = """
-plt.rcParams['font.family'] = \"FreeSerif\"
+command = """plt.rcParams['font.family'] = \"FreeSerif\"
  #     call it before  plt.subplots"""
 tag = ["python", "matplotlib", "global", "font"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Change global font size"
-command = """
-plt.rcParams['font.size'] = 12
+command = """plt.rcParams['font.size'] = 12
  #     call it before  plt.subplots"""
 tag = ["python", "matplotlib", "global", "font"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Set global color map"
-command = """
-plt.rcParams['image.cmap'] = 'seismic'"""
+command = """plt.rcParams['image.cmap'] = 'seismic'"""
 tag = ["python", "matplotlib", "global", "color"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Set global line properties"
-command = """
-plt.rcParams['lines.linewidth'] = 2
+command = """plt.rcParams['lines.linewidth'] = 2
 plt.rcParams['lines.color'] = 'k'
 plt.rcParams['lines.linestyle'] = ':'"""
 tag = ["python", "matplotlib", "global", "line", "property"]
@@ -595,30 +539,26 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - Set colors for line"
-command = """
-from cycler import cycler
+command = """from cycler import cycler
 mpl.rcParams['axes.prop_cycle'] = cycler(color=['k','r','b','g'])"""
 tag = ["python", "matplotlib", "global", "line", "color"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Delete a panel"
-command = """
-fig.delaxes(axes[1])"""
+command = """fig.delaxes(axes[1])"""
 tag = ["python", "matplotlib", "axis", "delete"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Add a panel"
-command = """
-ax = fig.add_axes([0.15, 0.6, 0.7, 0.3])  #    [left, bottom, width, height]"""
+command = """ax = fig.add_axes([0.15, 0.6, 0.7, 0.3])  #    [left, bottom, width, height]"""
 tag = ["python", "matplotlib", "axis", "add"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Add Panels"
-command = """
-  #  add \"axis\" (= panel)
+command = """  #  add \"axis\" (= panel)
 gs = fig.add_gridspec(nrows=3,ncols=2,height_ratios=[1., 1., 2.])  # change ratio
 
 for i in range(3):
@@ -630,16 +570,14 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - Close PDF page"
-command = """
-plt.tight_layout()
+command = """plt.tight_layout()
 plt.savefig('fig.pdf')"""
 tag = ["python", "matplotlib", "close", "pdf"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Multiple PDF pages"
-command = """
-with PdfPages('fig.pdf') as pdf:
+command = """with PdfPages('fig.pdf') as pdf:
     plt.tight_layout()
     pdf.savefig()
     plt.close(fig)"""
@@ -648,8 +586,7 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - Using zip"
-command = """
-ttls   = [      'U',       'V',      'T',      'S']
+command = """ttls   = [      'U',       'V',      'T',      'S']
 coords = [ (xu, zu),  (xu, zu), (xt, zt), (xt, zt)]
 data   = [    var_u,     var_v,    var_t,    var_s]
 levels = [   lvls_u,    lvls_v,  lvls_t ,   lvls_s]
@@ -664,16 +601,14 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - Contour Fill"
-command = """
-cs = ax.contourf(x,y,data,levels=np.arange(-1.,1.1,0.1)*0.1,cmap='seismic',extend='both')
+command = """cs = ax.contourf(x,y,data,levels=np.arange(-1.,1.1,0.1)*0.1,cmap='seismic',extend='both')
 #  cmap = 'seismic', 'bwr', 'jet'"""
 tag = ["python", "matplotlib", "contourf"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Log scale"
-command = """
-from matplotlib import ticker
+command = """from matplotlib import ticker
 lvls = 10**np.arange(-7., -5.1, 0.1)
 ax.contourf(x,y,data,levels=lvls,locator=ticker.LogLocator())"""
 tag = ["python", "matplotlib", "contourf", "log"]
@@ -681,8 +616,7 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - Log scale for both positive and negative"
-command = """
-import matplotlib.colors as colors
+command = """import matplotlib.colors as colors
 norm = colors.SymLogNorm( linthresh=1e0, linscale=1e0, vmin=vmin, vmax=vmax)
 cs = ax.pcolormesh(k,m,var, cmap=cmap, shading='auto', norm=norm)"""
 tag = ["python", "matplotlib", "pcolormesh", "log"]
@@ -690,15 +624,13 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - Color mesh (tiles)"
-command = """
-pcm = ax.pcolormesh(x,y,var, cmap=cmap, vmin=minimum_value, vmax=maximum_value)"""
+command = """pcm = ax.pcolormesh(x,y,var, cmap=cmap, vmin=minimum_value, vmax=maximum_value)"""
 tag = ["python", "matplotlib", "colormesh", "tiles"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Color bar to an axis"
-command = """
-cbar = fig.colorbar(cs,ax=ax, location='bottom', ticks=np.arange(0,6)*20, label=\"m/s\",
+command = """cbar = fig.colorbar(cs,ax=ax, location='bottom', ticks=np.arange(0,6)*20, label=\"m/s\",
                     aspect=40, pad=0.07, shrink=0.8)
 #cbar.set_label('N$^2$', loc='top')"""
 tag = ["python", "matplotlib", "colorbar"]
@@ -706,16 +638,14 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - Color bar with an separate ax (1)"
-command = """
-cbaxes = fig.add_axes([0.2, 0.05, 0.6, 0.015])
+command = """cbaxes = fig.add_axes([0.2, 0.05, 0.6, 0.015])
 cbar = plt.colorbar(cs, ax=ax, cax=cbaxes)"""
 tag = ["python", "matplotlib", "colorbar"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Color bar with an separate ax (2)"
-command = """
-import matplotlib as mpl
+command = """import matplotlib as mpl
 ax = fig.add_axes([0.58, 0.25, 0.37, 0.02])
 cmap = mpl.cm.jet
 norm = mpl.colors.Normalize(vmin=np.min(lvls), vmax=np.max(lvls))
@@ -727,16 +657,14 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - Contour Lines"
-command = """
-CS = ax.contour(data, colors='k', negative_linestyles='dotted')
+command = """CS = ax.contour(data, colors='k', negative_linestyles='dotted')
 axs[0].clabel(CS,CS.levels, inline=True, fontsize=10)"""
 tag = ["python", "matplotlib", "contour", "lines"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Pixel"
-command = """
-cs0 = ax.imshow(var, cmap='jet', vmin=0., vmax=1., \\
+command = """cs0 = ax.imshow(var, cmap='jet', vmin=0., vmax=1., \\
                 extent=(np.min(lon),np.max(lon),np.min(lev),np.max(lev)), \\
                 aspect='auto')
 #   var = var[{lev},{lon}]"""
@@ -745,38 +673,33 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - vertical line from the bottom to the top"
-command = """
-ax.axvline(x=0.5)"""
+command = """ax.axvline(x=0.5)"""
 tag = ["python", "matplotlib", "vertical", "line", "axvline"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - horizontal line from the bottom to the top"
-command = """
-ax.axhline(y=1.2)"""
+command = """ax.axhline(y=1.2)"""
 tag = ["python", "matplotlib", "horizontal", "line", "axhline"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Vector Plots"
-command = """
-Q = ax.quiver(lon,lat, uvel,vvel, scale=1e2)
+command = """Q = ax.quiver(lon,lat, uvel,vvel, scale=1e2)
 qk = ax.quiverkey(Q, 0.87,0.02, 10., '10 cm s$^{-1}$', labelpos='E', coordinates='figure')"""
 tag = ["python", "matplotlib", "vector"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Error bar"
-command = """
-ax.errorbar(x0,y0, yerr=[[errl],[errh]],fmt='o',c='k',elinewidth=2.0, capsize=3)
+command = """ax.errorbar(x0,y0, yerr=[[errl],[errh]],fmt='o',c='k',elinewidth=2.0, capsize=3)
 #  Error bar is from y0-errl to y0+errh. Dot is marked at y0. Data coordinate is used."""
 tag = ["python", "matplotlib", "error", "bar"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Create a rectangle: (x, y), width, height"
-command = """
-import matplotlib.patches as patches
+command = """import matplotlib.patches as patches
     (1, 2),        # bottom-left corner
     3,             # width
     4,             # height
@@ -790,100 +713,86 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - Set title"
-command = """
-ax.set_title('data at the first level', fontsize=12)
+command = """ax.set_title('data at the first level', fontsize=12)
 """
 tag = ["python", "matplotlib", "title"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Set label"
-command = """
-ax.set(xlabel='X', ylabel='Y')"""
+command = """ax.set(xlabel='X', ylabel='Y')"""
 tag = ["python", "matplotlib", "label"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Set x range"
-command = """
-ax.set_xlim([100.,150.])"""
+command = """ax.set_xlim([100.,150.])"""
 tag = ["python", "matplotlib", "x", "range", "xlim"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Set y range"
-command = """
-ax.set_ylim([-10.,10.])"""
+command = """ax.set_ylim([-10.,10.])"""
 tag = ["python", "matplotlib", "y", "range", "ylim"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Invert y axis"
-command = """
-ax.invert_yaxis()"""
+command = """ax.invert_yaxis()"""
 tag = ["python", "matplotlib", "invert", "y"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Set x axis in log scale"
-command = """
-ax.set_xscale('log')"""
+command = """ax.set_xscale('log')"""
 tag = ["python", "matplotlib", "axis", "log"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Control axis labels"
-command = """
-ax.xaxis.set_ticks(np.arange(start, end, stepsize))"""
+command = """ax.xaxis.set_ticks(np.arange(start, end, stepsize))"""
 tag = ["python", "matplotlib", "axis", "label"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Tick label format (like 1.2 x 10^{-1})"
-command = """
-ax.ticklabel_format(style='sci', axis='x', scilimits=(0,0))"""
+command = """ax.ticklabel_format(style='sci', axis='x', scilimits=(0,0))"""
 tag = ["python", "matplotlib", "label", "format"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Show ticks on both sides"
-command = """
-ax.tick_params(right=True,top=True,which='both')"""
+command = """ax.tick_params(right=True,top=True,which='both')"""
 tag = ["python", "matplotlib", "ticks", "both"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Set x tick labels"
-command = """
-ax.set_xticklabels(['Jan','Feb','Mar','Apr','May','Jun'])"""
+command = """ax.set_xticklabels(['Jan','Feb','Mar','Apr','May','Jun'])"""
 tag = ["python", "matplotlib", "tick", "labels"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Change label font size"
-command = """
-ax.xaxis.label.set_fontsize(12)"""
+command = """ax.xaxis.label.set_fontsize(12)"""
 tag = ["python", "matplotlib", "label", "size"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Change tick font size"
-command = """
-ax.xaxis.set_tick_params(labelsize=10)"""
+command = """ax.xaxis.set_tick_params(labelsize=10)"""
 tag = ["python", "matplotlib", "tick", "size"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Change axis label font size"
-command = """
-ax.set_ylabel('Depth (m)', fontsize=8)"""
+command = """ax.set_ylabel('Depth (m)', fontsize=8)"""
 tag = ["python", "matplotlib", "label", "size"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Add text"
-command = """
-ax.text(100.,40.,'some label')                 #  in data coordinates
+command = """ax.text(100.,40.,'some label')                 #  in data coordinates
 plt.gcf().text(0.7, 0.15, text, fontsize=12)   #  in figure coordinates
 plt.figtext(0.60, 0.1, 'XXX', fontsize=14)     #  in figure coordinates
 """
@@ -892,8 +801,7 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - x range in date"
-command = """
-import datetime
+command = """import datetime
 ax.set_xlim([datetime.date(2014,1,26), datetime.date(2014,2,1)])
 ax.set_xlim([np.datetime64('2014-01-26'), \\
              np.datetime64('2014-02-01') + np.timedelta64(100,'D')])"""
@@ -902,8 +810,7 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - Tick formats in date"
-command = """
-import matplotlib.dates as dates
+command = """import matplotlib.dates as dates
 ax.xaxis.set_major_locator(dates.MonthLocator(interval=2))  #  Show ticks very two months
 ax.xaxis.set_major_locator(dates.YearLocator(1))            #  Show ticks every year
 ax.xaxis.set_major_locator(dates.YearLocator(base=5))       #  Show ticks every five years"""
@@ -912,8 +819,7 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - Tick formats in date"
-command = """
-import matplotlib.dates as mdates
+command = """import matplotlib.dates as mdates
 myFmt = mdates.DateFormatter('%m/%d')
 ax.xaxis.set_major_formatter(myFmt)"""
 tag = ["python", "matplotlib", "tick", "date", "format"]
@@ -921,15 +827,13 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - Degree symbol"
-command = """
-degE = '\\N{degree sign}E'"""
+command = """degE = '\\N{degree sign}E'"""
 tag = ["python", "matplotlib", "degree", "symbol"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Longitude labels using cartopy"
-command = """
-import cartopy.mpl.ticker as cticker
+command = """import cartopy.mpl.ticker as cticker
 lon_formatter = cticker.LongitudeFormatter()
 ax.set_xticks(np.arange(30,180,30))
 ax.xaxis.set_major_formatter(lon_formatter)"""
@@ -938,8 +842,7 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - Longitude labels"
-command = """
-LonTicks = np.arange(70,91,10)
+command = """LonTicks = np.arange(70,91,10)
 LonTickNames = np.char.mod('%d', LonTicks)
 LonTickNames = [s + '\\N{degree sign}E' for s in LonTickNames]"""
 tag = ["python", "matplotlib", "label", "longitude", "manually"]
@@ -947,16 +850,14 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - Minor ticks"
-command = """
-from matplotlib.ticker import AutoMinorLocator
+command = """from matplotlib.ticker import AutoMinorLocator
 ax.xaxis.set_minor_locator(AutoMinorLocator(5))"""
 tag = ["python", "matplotlib", "minor", "tick"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - Secondary Axis"
-command = """
-def f2T(x):
+command = """def f2T(x):
     return 1./x
 def T2f(x):
     return 1./x
@@ -969,8 +870,7 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - Generate ['(a)','(b)', ...]"
-command = """
-import string
+command = """import string
 txt_labels = [f\"({c})\" for c in string.ascii_lowercase]"""
 tag = ["python", "matplotlib", "label", "alphabet", "generate"]
 output = ""
@@ -979,16 +879,14 @@ output = ""
 
 [[snippets]]
 description = "NetCDF4 - Imports"
-command = """
-import netCDF4
+command = """import netCDF4
 """
 tag = ["python", "netcdf4", "import"]
 output = ""
 
 [[snippets]]
 description = "NetCDF4 - Read"
-command = """
-f1 = netCDF4.Dataset('./foo.nc', 'r')
+command = """f1 = netCDF4.Dataset('./foo.nc', 'r')
 var = np.copy(f1.variables['var'])
 f1.close()"""
 tag = ["python", "netcdf4", "read"]
@@ -996,8 +894,7 @@ output = ""
 
 [[snippets]]
 description = "NetCDF4 - Write"
-command = """
-nc = Dataset(filename, \"w\")
+command = """nc = Dataset(filename, \"w\")
 nc.createDimension(\"x\", len(x))
 nc.createDimension(\"y\", len(y))
 nc.createDimension(\"z\", len(z))
@@ -1008,8 +905,7 @@ output = ""
 
 [[snippets]]
 description = "NetCDF4 - Write (2)"
-command = """
-f1 = netCDF4.Dataset('myfile.nc','w',format='NETCDF4')
+command = """f1 = netCDF4.Dataset('myfile.nc','w',format='NETCDF4')
 
 f1.createDimension('lon', nx)
 f1.createDimension('lat', ny)
@@ -1036,8 +932,7 @@ output = ""
 
 [[snippets]]
 description = "NetCDF4 - Convert netCDF4 time to numpy.datetime64"
-command = """
-                      # Convert numerical time to cftime objects
+command = """                      # Convert numerical time to cftime objects
 cftime_times = netCDF4.num2date(time[:], time.units, calendar=time.calendar)
 
                       # Convert cftime objects to numpy.datetime64
@@ -1049,8 +944,7 @@ output = ""
 
 [[snippets]]
 description = "Scipy - Running mean"
-command = """
-from scipy.ndimage import uniform_filter1d
+command = """from scipy.ndimage import uniform_filter1d
 
 n_rm = 13
 
@@ -1066,16 +960,14 @@ output = ""
 
 [[snippets]]
 description = "Scipy - Detrend"
-command = """
-from scipy import signal
+command = """from scipy import signal
 var = var.copy(data=signal.detrend(var))"""
 tag = ["python", "scipy", "detrend"]
 output = ""
 
 [[snippets]]
 description = "Scipy - 1D interpolation"
-command = """
-from scipy.interpolate import interp1d
+command = """from scipy.interpolate import interp1d
 x = np.linspace(0, 10, num=11, endpoint=True)
 y = np.cos(-x**2/9.0)
 
@@ -1094,8 +986,7 @@ output = ""
 
 [[snippets]]
 description = "Scipy - Regular grid interpolation"
-command = """
-from scipy.interpolate import RegularGridInterpolator
+command = """from scipy.interpolate import RegularGridInterpolator
 
 #    invar = [{len(y)}, {len(x)}],  Must be an numpy array
 #    y, x, data must be numpy arrays
@@ -1109,8 +1000,7 @@ output = ""
 
 [[snippets]]
 description = "Scipy - Correlation analysis"
-command = """
-from scipy.stats import pearsonr, t
+command = """from scipy.stats import pearsonr, t
 import sys
 sys.path.insert(0,'/S/data01/G4006/y0330/code/sub')
 from subs import edof_cor
@@ -1128,8 +1018,7 @@ output = ""
 
 [[snippets]]
 description = "Scipy - Lead-lag correlation analysis"
-command = """
-lag = np.arange(-30,30,5,dtype=int)
+command = """lag = np.arange(-30,30,5,dtype=int)
 
 for l in range(len(lag)):
     lx0,lx1 = np.max([0,0-lag[l]]), np.min([nt,nt-lag[l]])
@@ -1145,8 +1034,7 @@ output = ""
 
 [[snippets]]
 description = "Scipy - Function fitting"
-command = """
-from scipy.optimize import curve_fit
+command = """from scipy.optimize import curve_fit
 
 def func(x, a, b, c):
     return a * np.exp(-1. *x /b) + c
@@ -1160,16 +1048,14 @@ output = ""
 
 [[snippets]]
 description = "Scipy - Power spectrum (peridogram)"
-command = """
-from scipy import signal
+command = """from scipy import signal
 freq, Pxx_den = signal.periodogram(input_time_series, sampling_frequency)"""
 tag = ["python", "scipy", "spectrum"]
 output = ""
 
 [[snippets]]
 description = "Scipy - Power spectrum (welch)"
-command = """
-from scipy import signal
+command = """from scipy import signal
 
 f, Pxx_den = signal.welch(x, fs, nperseg=nperseg)
 #    x       :   Smaple time series
@@ -1186,8 +1072,7 @@ output = ""
 
 [[snippets]]
 description = "Scipy - Smoothing (band averaging)"
-command = """
-from scipy.ndimage import uniform_filter1d
+command = """from scipy.ndimage import uniform_filter1d
 for i in range(0,5):                               #    5 times
     var = uniform_filter1d(var, size=10, axis=0)   #   10 grid points"""
 tag = ["python", "scipy", "smoothing"]
@@ -1195,8 +1080,7 @@ output = ""
 
 [[snippets]]
 description = "Scipy - Filtering"
-command = """
-from scipy import signal
+command = """from scipy import signal
 order = 5
 sos = signal.butter(order, [lowcut, highcut], fs=fs, btype='band', output='sos')
 var_out = signal.sosfiltfilt(sos, var_in)"""
@@ -1207,23 +1091,20 @@ output = ""
 
 [[snippets]]
 description = "Pandas - Imports"
-command = """
-import pandas as pd"""
+command = """import pandas as pd"""
 tag = ["python", "pandas", "import"]
 output = ""
 
 [[snippets]]
 description = "Pandas - Create timestamp"
-command = """
-time = pd.Timestamp('2000-01-01')
+command = """time = pd.Timestamp('2000-01-01')
 time = pd.Timestamp(year=2017, month=1, day=1, hour=12)"""
 tag = ["python", "pandas"]
 output = ""
 
 [[snippets]]
 description = "Pandas - Create a series timestamp at mid month"
-command = """
-times = pd.date_range(\"2000-01-01\", periods=12,freq='MS') + pd.Timedelta(days=14)
+command = """times = pd.date_range(\"2000-01-01\", periods=12,freq='MS') + pd.Timedelta(days=14)
 #    from 2000-01-01, 12 grids, every month, starts from Jan 15th
 
 times = pd.date_range(start=\"2000-01-01 12:00:00\", end='2010-01-01 12:00:00',freq='D')
@@ -1233,15 +1114,13 @@ output = ""
 
 [[snippets]]
 description = "Pandas - Convert everything (datetime64[ns]) to pd.Timestamp"
-command = """
-time_converted = pd.to_datetime(time_input)"""
+command = """time_converted = pd.to_datetime(time_input)"""
 tag = ["python", "pandas"]
 output = ""
 
 [[snippets]]
 description = "Pandas - Convert xarray timestamp to real numpy array"
-command = """
-time = xr.open_dataset('infile.nc')['time']
+command = """time = xr.open_dataset('infile.nc')['time']
 time = pd.to_datetime(time) - pd.Timestamp(2000,1,1)   #  convert time to days since 2000-1-1
 time1 = time.astype('timedelta64[h]')                  #  in hours (use \"D\" for days, \"s' for seconds)
 time2 = np.array(time1)                                #  convert to numpy array"""
@@ -1250,8 +1129,7 @@ output = ""
 
 [[snippets]]
 description = "Pandas - Convert timestamp read by netCDF4 to pandas"
-command = """
-time = f1.variables['time']
+command = """time = f1.variables['time']
 time_ref = pd.to_datetime(time.units, format='Days since %Y-%m-%d %H:%M:%S')   #  reference time
 time1 = time_ref + pd.to_timedelta(np.array(time), time.units[0])  #  pandas time format"""
 tag = ["python", "pandas"]
@@ -1259,29 +1137,25 @@ output = ""
 
 [[snippets]]
 description = "Pandas - Get date"
-command = """
-iyear = time.year     #  'time' is pd timestamp"""
+command = """iyear = time.year     #  'time' is pd timestamp"""
 tag = ["python", "pandas"]
 output = ""
 
 [[snippets]]
 description = "Pandas - datetime, formatted output"
-command = """
-text = time.strftime('%Y/%m/%d')"""
+command = """text = time.strftime('%Y/%m/%d')"""
 tag = ["python", "pandas"]
 output = ""
 
 [[snippets]]
 description = "Pandas - datetime, number of days between two dates"
-command = """
-result = (tend - tstrt).days"""
+command = """result = (tend - tstrt).days"""
 tag = ["python", "pandas"]
 output = ""
 
 [[snippets]]
 description = "Pandas - reads in using xarray and convert pandas time"
-command = """
-time = xr.open_dataset(infile)['time']
+command = """time = xr.open_dataset(infile)['time']
 time = pd.to_datetime(np.array(time))"""
 tag = ["python", "pandas"]
 output = ""
@@ -1290,30 +1164,26 @@ output = ""
 
 [[snippets]]
 description = "Xarray - Imports"
-command = """
-import xarray as xr"""
+command = """import xarray as xr"""
 tag = ["python", "xarray", "import"]
 output = ""
 
 [[snippets]]
 description = "Xarray - Read in"
-command = """
-var = xr.open_dataset(infile)['var'].sel(lon=slice(x0,x1))"""
+command = """var = xr.open_dataset(infile)['var'].sel(lon=slice(x0,x1))"""
 tag = ["python", "xarray", "read"]
 output = ""
 
 [[snippets]]
 description = "Xarray - Read in (2)"
-command = """
-slice_setting = dict(lon=slice(10., 20.))
+command = """slice_setting = dict(lon=slice(10., 20.))
 arr = xr.open_dataset(\"file.nc\")['var'].sel(slice_setting)"""
 tag = ["python", "xarray", "read"]
 output = ""
 
 [[snippets]]
 description = "Xarray - Convert time to days"
-command = """
-time = xr.open_dataset(infile)['time']
+command = """time = xr.open_dataset(infile)['time']
 time = np.array(time)
 time = (time - time[0]).astype('timedelta64[D]')
 time = time.astype(float)"""
@@ -1322,23 +1192,20 @@ output = ""
 
 [[snippets]]
 description = "Xarray - Write out"
-command = """
-ds.to_netcdf('./mask.nc')"""
+command = """ds.to_netcdf('./mask.nc')"""
 tag = ["python", "xarray", "write"]
 output = ""
 
 [[snippets]]
 description = "Xarray - Convert a numpy array to an xarray"
-command = """
-var_out = xr.DataArray(data=var, coords=[time, lat, lon], dims=['time','lat', 'lon'])
+command = """var_out = xr.DataArray(data=var, coords=[time, lat, lon], dims=['time','lat', 'lon'])
                                    #   append coordinates"""
 tag = ["python", "xarray", "array", "convert"]
 output = ""
 
 [[snippets]]
 description = "Xarray - Make a xarray dataset"
-command = """
-ds = xr.Dataset({'var': var_out})  #   copy to a dataset
+command = """ds = xr.Dataset({'var': var_out})  #   copy to a dataset
 
 ds = xr.Dataset(
      data_vars=dict(
@@ -1358,30 +1225,26 @@ output = ""
 
 [[snippets]]
 description = "Xarray - Coordinate"
-command = """
-time = var.time"""
+command = """time = var.time"""
 tag = ["python", "xarray"]
 output = ""
 
 [[snippets]]
 description = "Xarray - Subtract monthly climatology"
-command = """
-climatology = ds.groupby('time.month').mean('time')
+command = """climatology = ds.groupby('time.month').mean('time')
 anomalies = ds.groupby('time.month') - climatology"""
 tag = ["python", "xarray", "calculation",]
 output = ""
 
 [[snippets]]
 description = "Xarray - Remove dimension"
-command = """
-var = var.squeeze(drop=True)"""
+command = """var = var.squeeze(drop=True)"""
 tag = ["python", "xarray", "array"]
 output = ""
 
 [[snippets]]
 description = "Xarray - Find the common period"
-command = """
-time1 = xr.open_dataset(infile1)['time']
+command = """time1 = xr.open_dataset(infile1)['time']
 time2 = xr.open_dataset(infile2)['time']
 
 tmp = np.zeros(2)
@@ -1400,15 +1263,13 @@ output = ""
 
 [[snippets]]
 description = "TEOS10 gsw - Imports"
-command = """
-import gsw"""
+command = """import gsw"""
 tag = ["python", "gsw", "import"]
 output = ""
 
 [[snippets]]
 description = "TEOS10 gsw - Seawater potential density"
-command = """
-pres = gsw.conversions.p_from_z(lev,lat)
+command = """pres = gsw.conversions.p_from_z(lev,lat)
 sa   = gsw.conversions.SA_from_SP(salt,pres,lon,lat)
 ct   = gsw.conversions.CT_from_pt(sa,temp)
 prho = gsw.density.sigma0(sa,ct)"""
@@ -1417,8 +1278,7 @@ output = ""
 
 [[snippets]]
 description = "TEOS10 gsw - Seawater potential density - Array"
-command = """
-#  temp[{time},{lev},{lat},{lon}]
+command = """#  temp[{time},{lev},{lat},{lon}]
 #  salt[{time},{lev},{lat},{lon}]
 lon1, lat1, pres = np.zeros((3,len(lev),len(lat),len(lon)))
 prho = np.zeros((len(time),len(lev),len(lat),len(lon)))
@@ -1444,8 +1304,7 @@ output = ""
 
 [[snippets]]
 description = "Sympy - Symbolic integration"
-command = """
->>> from sympy import *
+command = """>>> from sympy import *
 >>> x,t,z,nu = symbols('x t z nu')
 >>> integrate(sin(x**2), (x, -oo, oo))
 sqrt(2)*sqrt(pi)/2"""
@@ -1456,8 +1315,7 @@ output = ""
 
 [[snippets]]
 description = "datetime - get year/month/day etc from timestamp"
-command = """
-# 1
+command = """# 1
 
 import netCDF4
 
@@ -1485,8 +1343,7 @@ output = ""
 
 [[snippets]]
 description = "datetime - make labels for the time axis"
-command = """
-from datetime import date
+command = """from datetime import date
 
 idx = time.units.index('-')             #  find reference time
 iyear  = int(time.units[idx-4:idx])
@@ -1513,15 +1370,13 @@ output = ""
 
 [[snippets]]
 description = "pywavelets - Imports"
-command = """
-import pywt"""
+command = """import pywt"""
 tag = ["python", "pywavelets", "import"]
 output = ""
 
 [[snippets]]
 description = "pywavelets - Continuous wavelet transform"
-command = """
-scales = np.arange(1,50)       #  scale. Frequency depends on it
+command = """scales = np.arange(1,50)       #  scale. Frequency depends on it
 wavelet_name = 'cmor2.0-1.0'   #  wavelet function in the form of 'cmorB-C.'
                                #      cmor = Complex Morlet
                                #      B = 2.0 (Torrence and Compo 1998, Table 1)
@@ -1553,8 +1408,7 @@ output = ""
 
 [[snippets]]
 description = "pywavelets - Obtain scales from frequency"
-command = """
-freq = np.fft.fftfreq(nt, d=1.0)
+command = """freq = np.fft.fftfreq(nt, d=1.0)
 positive = freq > 0
 freq = freq[positive]
 scales = pywt.frequency2scale(wavelet_name, freq)"""
@@ -1565,8 +1419,7 @@ output = ""
 
 [[snippets]]
 description = "rich - Rich traceback"
-command = """
-from rich import traceback
+command = """from rich import traceback
 traceback.install()"""
 tag = ["python", "rich"]
 output = ""
@@ -1575,8 +1428,7 @@ output = ""
 
 [[snippets]]
 description = "importlib - Import main(): from a file in a different directory"
-command = """
-import importlib.util
+command = """import importlib.util
 from pathlib import Path
 
 target = Path(__file__).resolve().parents[2] / \"plot.py\"  #  path of the file including def main()
@@ -1599,8 +1451,7 @@ output = ""
 
 [[snippets]]
 description = "Cartopy - Imports"
-command = """
-import cartopy
+command = """import cartopy
 import cartopy.crs as ccrs
 import cartopy.mpl.ticker as cticker"""
 tag = ["python", "cartopy"]
@@ -1610,18 +1461,16 @@ output = ""
 
 [[snippets]]
 description = "LaTeX - Environments"
-command = '''
-\documentclass[]{article}
+command = '''\documentclass[]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,mathrsfs,amssymb,empheq,bm,pdfpages,cancel}
 \newcommand{\pt}{\partial}'''
-tag = ["latex", "header", "documentclass", "usepackage"]
+ta = ["latex", "header", "documentclass", "usepackage"]
 output = ""
 
 [[snippets]]
 description = "LaTeX - biber"
-command = '''
-\usepackage[
+command = '''\usepackage[
   backend=biber,
   style=apa
 ]{biblatex}
@@ -1635,8 +1484,7 @@ output = ""
 
 [[snippets]]
 description = "LaTeX - clever reference"
-command = '''
-\usepackage{cleveref}
+command = '''\usepackage{cleveref}
 \crefname{equation}{eq.}{eqs.}
 \Crefname{equation}{Eq.}{Eqs.}'''
 tag = ["latex", "biber", "reference", "clever", "cleveref"]
@@ -1644,8 +1492,7 @@ output = ""
 
 [[snippets]]
 description = "LaTeX - Include a figure"
-command = '''
-\begin{figure}[htb]
+command = '''\begin{figure}[htb]
   \centering
   \includegraphics[width=12cm,trim={2cm 2cm 2cm 2cm},clip]{fig.pdf}
   \caption{CAPTION}
@@ -1656,8 +1503,7 @@ output = ""
 
 [[snippets]]
 description = "LaTeX - Font for code"
-command = '''
-\begin{verbatim}
+command = '''\begin{verbatim}
   Aval=np.array([12.04, 12.37, 12.35, 12.43, 12.34, 12.36, 12.48, 12.33, 12.33])
   Bval=np.array([12.18, 12.37, 12.38, 12.36, 12.47, 12.48, 12.57, 12.28, 12.42])
 \end{verbatim}
@@ -1668,8 +1514,7 @@ output = ""
 
 [[snippets]]
 description = "LaTeX - Equations with left curly bracket"
-command = '''
-\begin{empheq}[left=\empheqlbrace]{align}
+command = '''\begin{empheq}[left=\empheqlbrace]{align}
   a + b &= c, \\
   d + e &= f.
 \end{empheq}'''
@@ -1678,8 +1523,7 @@ output = ""
 
 [[snippets]]
 description = "LaTeX - Matrix with indices (nice matrix)"
-command = '''
-\usepackage{nicematrix}
+command = '''\usepackage{nicematrix}
 \begin{align}
   A =
   \begin{pNiceMatrix}[first-row,first-col]
@@ -1698,16 +1542,14 @@ output = ""
 
 [[snippets]]
 description = "LaTeX - Bullets"
-command = '''
-\newcommand{\firstbullet}{\noindent \textbullet \hspace{6 pt}}
-\renewcommand{\bullet}{\vspace{6 pt} \noindent \textbullet \hspace{6 pt}}'''
+command = '''\newcommand{\firstbullet}{\noindent \textbullet \hspace{6 pt}}
+\renewcommand{\ullet}{\vspace{6 pt} \noindent \textbullet \hspace{6 pt}}'''
 tag = ["latex", "bullet"]
 output = ""
 
 [[snippets]]
 description = "LaTeX - subfiles"
-command = '''
-\usepackage{subfiles}    #  in MAIN.tex
+command = '''\usepackage{subfiles}    #  in MAIN.tex
 \subfile{SUBDIR/FILE1}   #  in MAIN.tex
 %
 % !TEX root = FILE1.tex                #  in FILE1.tex
