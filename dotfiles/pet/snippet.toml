@@ -2,7 +2,7 @@
 # Python snippets converted for pet. Use pet search --raw for insertion.
 
 [[snippets]]
-description = "Plain python - Output to a text file"
+description = "Python - Output to a text file"
 command = """
 texts = ['line 1', 'line2']
 
@@ -14,7 +14,7 @@ tag = ["python", "basic", "output"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Sort one array by another array"
+description = "Python - Sort one array by another array"
 command = """
 inds = arr1.argsort()
 arr1_sorted = arr1[inds]
@@ -23,7 +23,7 @@ tag = ["python", "basic", "sort"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Last element"
+description = "Python - Last element"
 command = """
 some_list[-1]          #   last element
 some_list[-n]          #   n-th to last element"""
@@ -31,7 +31,7 @@ tag = ["python", "basic", "index"]
 output = ""
 
 [[snippets]]
-description = "Plain python - read user defined functions"
+description = "Python - read user defined functions"
 command = """
 import sys
 sys.path.insert(0,'/S/data01/G5018/c0538/code/sub/sub')
@@ -40,14 +40,14 @@ tag = ["python", "basic", "function"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Broadcasting"
+description = "Python - Broadcasting"
 command = """
 var_2d = np.ones((len(z),len(x))) * var_1d[:,np.newaxis]  #   var_1d[{z}] to var_2d[{z},{x}]"""
 tag = ["python", "basic", "broadcasting"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Remove duplicated elements"
+description = "Python - Remove duplicated elements"
 command = """
 var_out = list( {d:None for d in var}.keys() )
 
@@ -56,7 +56,7 @@ tag = ["python", "basic"]
 output = ""
 
 [[snippets]]
-description = "Plain python - List comprehension"
+description = "Python - List comprehension"
 command = """
 tmp = ['xx_{}'.format(x) for x in range(1,5)]
 #  ['xx_1', 'xx_2', 'xx_3', 'xx_4']"""
@@ -64,7 +64,7 @@ tag = ["python", "basic", "list"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Options"
+description = "Python - Options"
 command = """
 MODE = \"b\"
 
@@ -75,28 +75,28 @@ tag = ["python", "basic"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Print format - for scalar"
+description = "Python - Print format - for scalar"
 command = """
 print(f'scalar = {scalar:6.2f} m s^-1')"""
 tag = ["python", "basic", "format", "scalar"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Print format - for array"
+description = "Python - Print format - for array"
 command = """
 print(\"array = [\"+\", \".join(f\"{v:.2f}\" for v in array[:])+\"]\")"""
 tag = ["python", "basic", "format", "array"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Print format - for tuple"
+description = "Python - Print format - for tuple"
 command = """
 print('this is a tuple {0}'.format(thetuple))"""
 tag = ["python", "basic", "format", "tuple"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Print format - in column"
+description = "Python - Print format - in column"
 command = """
 for data in x:
     print '{:9.3f}'.format(data)"""
@@ -104,7 +104,7 @@ tag = ["python", "basic", "format", "colomn"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Print format - in row"
+description = "Python - Print format - in row"
 command = """
 import sys
 for data in x:
@@ -113,14 +113,14 @@ tag = ["python", "basic", "format", "row"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Print format - array to array"
+description = "Python - Print format - array to array"
 command = """
 str_arr = [f\"{x:.2f}\" for x in arr]"""
 tag = ["python", "basic", "format", "array"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Print format - 5e-6 ---> \"5 x 10^-6\""
+description = "Python - Print format - 5e-6 ---> \"5 x 10^-6\""
 command = """
 val = 5e-6
 m, e = f\"{val:.2e}\".split(\"e\")
@@ -129,7 +129,7 @@ tag = ["python", "basic", "format", "scientific"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Print format - Same width for both polarities"
+description = "Python - Print format - Same width for both polarities"
 command = """
 print(f\"{1.0e-5: .1e}\")
 print(f\"{-1.0e-5: .1e}\")
@@ -140,7 +140,7 @@ output = ""
 
 
 [[snippets]]
-description = "Plain python - Print format"
+description = "Python - Print format"
 command = """
 {x:5}\t   5 letters, right aligned
 {x:<5}\t  5 letters, left aligned
@@ -152,7 +152,7 @@ tag = ["python", "basic", "format"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Create or append/add to an array"
+description = "Python - Create or append/add to an array"
 command = """
 A_acc = None
 
@@ -165,7 +165,7 @@ tag = ["python", "basic", "loop", "append"]
 output = ""
 
 [[snippets]]
-description = "Plain python - simple for loop"
+description = "Python - simple for loop"
 command = """
 for i in range(nx):
     (do what you want)"""
@@ -173,7 +173,7 @@ tag = ["python", "basic", "for", "loop"]
 output = ""
 
 [[snippets]]
-description = "Plain python - for loop - enumerate arrays"
+description = "Python - for loop - enumerate arrays"
 command = """
 for i, arr in enumerate([A, B]):
     #   arr = A for i = 0
@@ -182,7 +182,7 @@ tag = ["python", "basic", "for", "loop", "enumerate"]
 output = ""
 
 [[snippets]]
-description = "Plain python - for loop - zip arrays"
+description = "Python - for loop - zip arrays"
 command = """
 for v1, v2, v3  in zip((A, B), (C, D), (E,F)):
     #  v1,v2,v3 = A,C,E for the first loop,
@@ -191,7 +191,7 @@ tag = ["python", "basic", "for", "loop", "zip"]
 output = ""
 
 [[snippets]]
-description = "Plain python - for loop - enumerate a pair of arrays"
+description = "Python - for loop - enumerate a pair of arrays"
 command = """
 for i, (arr1, arr2) in enumerate(zip((A,B),(C,D))):
     #  arr1 = A and arr2 = C for i = 0
@@ -200,7 +200,7 @@ tag = ["python", "basic", "for", "loop", "enumerate"]
 output = ""
 
 [[snippets]]
-description = "Plain python - for loop - enumerate and zip"
+description = "Python - for loop - enumerate and zip"
 command = """
 for i, (a, b) in enumerate(zip(A, B)):
     print(i, a, b)
@@ -210,7 +210,7 @@ tag = ["python", "basic", "for", "loop", "enumerate", "zip"]
 output = ""
 
 [[snippets]]
-description = "Plain python - for loop - zip() + unpack (*)"
+description = "Python - for loop - zip() + unpack (*)"
 command = """
 for iω1, iω2 in zip(*iω):
 #   For iω = [[1, 2, 3],
@@ -223,7 +223,7 @@ tag = ["python", "basic", "for", "loop", "zip", "unpack"]
 output = ""
 
 [[snippets]]
-description = "Plain python - if statement"
+description = "Python - if statement"
 command = """
 if age >= 18 and has_ticket:
 
@@ -240,14 +240,14 @@ tag = ["python", "basic"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Raise error and stop"
+description = "Python - Raise error and stop"
 command = """
 raise ValueError(\"Invalid input!\")"""
 tag = ["python", "basic", "raise", "error"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Script entry point"
+description = "Python - Script entry point"
 command = """
 if __name__ == \"__main__\":
     sys.exit(main())"""
@@ -255,7 +255,7 @@ tag = ["python", "basic", "entry", "script"]
 output = ""
 
 [[snippets]]
-description = "Plain python - dataclass"
+description = "Python - dataclass"
 command = """
 from dataclasses import dataclass, field
 import numpy as np
@@ -293,7 +293,7 @@ tag = ["python", "basic", "dataclass"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Class"
+description = "Python - Class"
 command = """
 class Var:
     def __init__(self, number, string):
@@ -306,7 +306,7 @@ tag = ["python", "basic", "class"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Share variables between functions using class"
+description = "Python - Share variables between functions using class"
 command = """
 class test_class:
     def __init__(self,p1):
@@ -323,7 +323,7 @@ tag = ["python", "basic", "class"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Get the work path"
+description = "Python - Get the work path"
 command = """
 import sys, pathlib, os
 
@@ -335,7 +335,7 @@ tag = ["python", "basic", "environmental", "path"]
 output = ""
 
 [[snippets]]
-description = "Plain python - Smartphone Notifier"
+description = "Python - Smartphone Notifier"
 command = """
 import subprocess
 subprocess.run(
@@ -891,47 +891,66 @@ tag = ["python", "matplotlib", "add", "text"]
 output = ""
 
 [[snippets]]
-description = "Matplotlib - "
+description = "Matplotlib - x range in date"
 command = """
-"""
-tag = ["python", "matplotlib"]
-output = ""
-
-
-
-
-
-[[snippets]]
-description = "Matplotlib - Axis/Title Settings"
-command = """
-import datetime                                             #  set time range
+import datetime
 ax.set_xlim([datetime.date(2014,1,26), datetime.date(2014,2,1)])
 ax.set_xlim([np.datetime64('2014-01-26'), \\
-             np.datetime64('2014-02-01') + np.timedelta64(100,'D')])
+             np.datetime64('2014-02-01') + np.timedelta64(100,'D')])"""
+tag = ["python", "matplotlib", "xlim", "date"]
+output = ""
 
+[[snippets]]
+description = "Matplotlib - Tick formats in date"
+command = """
 import matplotlib.dates as dates
 ax.xaxis.set_major_locator(dates.MonthLocator(interval=2))  #  Show ticks very two months
 ax.xaxis.set_major_locator(dates.YearLocator(1))            #  Show ticks every year
-ax.xaxis.set_major_locator(dates.YearLocator(base=5))       #  Show ticks every five years
+ax.xaxis.set_major_locator(dates.YearLocator(base=5))       #  Show ticks every five years"""
+tag = ["python", "matplotlib", "tick", "date", "format"]
+output = ""
 
-import matplotlib.dates as mdates                           #  Format dates on axis
+[[snippets]]
+description = "Matplotlib - Tick formats in date"
+command = """
+import matplotlib.dates as mdates
 myFmt = mdates.DateFormatter('%m/%d')
-ax.xaxis.set_major_formatter(myFmt)
+ax.xaxis.set_major_formatter(myFmt)"""
+tag = ["python", "matplotlib", "tick", "date", "format"]
+output = ""
 
-degE = '\\N{degree sign}E'                                   #   Degree symbol
+[[snippets]]
+description = "Matplotlib - Degree symbol"
+command = """
+degE = '\\N{degree sign}E'"""
+tag = ["python", "matplotlib", "degree", "symbol"]
+output = ""
 
-import cartopy.mpl.ticker as cticker                        #   Longitude labels using cartopy
+[[snippets]]
+description = "Matplotlib - Longitude labels using cartopy"
+command = """
+import cartopy.mpl.ticker as cticker
 lon_formatter = cticker.LongitudeFormatter()
 ax.set_xticks(np.arange(30,180,30))
-ax.xaxis.set_major_formatter(lon_formatter)
+ax.xaxis.set_major_formatter(lon_formatter)"""
+tag = ["python", "matplotlib", "label", "longitude", "cartopy"]
+output = ""
 
-LonTicks = np.arange(70,91,10)                              #   Longitude labels by hand
+[[snippets]]
+description = "Matplotlib - Longitude labels"
+command = """
+LonTicks = np.arange(70,91,10)
 LonTickNames = np.char.mod('%d', LonTicks)
-LonTickNames = [s + '\\N{degree sign}E' for s in LonTickNames]
+LonTickNames = [s + '\\N{degree sign}E' for s in LonTickNames]"""
+tag = ["python", "matplotlib", "label", "longitude", "manually"]
+output = ""
 
-from matplotlib.ticker import AutoMinorLocator              #   5 minor ticks per 1 major tick
+[[snippets]]
+description = "Matplotlib - Minor ticks"
+command = """
+from matplotlib.ticker import AutoMinorLocator
 ax.xaxis.set_minor_locator(AutoMinorLocator(5))"""
-tag = ["python", "matplotlib"]
+tag = ["python", "matplotlib", "minor", "tick"]
 output = ""
 
 [[snippets]]
@@ -941,12 +960,11 @@ def f2T(x):
     return 1./x
 def T2f(x):
     return 1./x
-
 xax2 = ax.secondary_xaxis('top', functions=(f2T,T2f))
 xax2.set_xlabel('Period (day)')
 xax2.xaxis.set_ticks([180., 57.])
 xax2.xaxis.set_ticklabels(['180', '57'])"""
-tag = ["python", "matplotlib"]
+tag = ["python", "matplotlib", "secondary", "axis"]
 output = ""
 
 [[snippets]]
@@ -954,43 +972,42 @@ description = "Matplotlib - Generate ['(a)','(b)', ...]"
 command = """
 import string
 txt_labels = [f\"({c})\" for c in string.ascii_lowercase]"""
-tag = ["python", "matplotlib"]
+tag = ["python", "matplotlib", "label", "alphabet", "generate"]
 output = ""
+
+#        NetCDF4
 
 [[snippets]]
 description = "NetCDF4 - Imports"
 command = """
 import netCDF4
-import numpy as np"""
-tag = ["python", "netcdf4"]
+"""
+tag = ["python", "netcdf4", "import"]
 output = ""
 
 [[snippets]]
-description = "NetCDF4 - read"
+description = "NetCDF4 - Read"
 command = """
 f1 = netCDF4.Dataset('./foo.nc', 'r')
 var = np.copy(f1.variables['var'])
 f1.close()"""
-tag = ["python", "netcdf4"]
+tag = ["python", "netcdf4", "read"]
 output = ""
 
 [[snippets]]
-description = "NetCDF4 - write"
+description = "NetCDF4 - Write"
 command = """
 nc = Dataset(filename, \"w\")
-
 nc.createDimension(\"x\", len(x))
 nc.createDimension(\"y\", len(y))
 nc.createDimension(\"z\", len(z))
-
 nc.createVariable(\"var\", \"f8\", (\"z\",\"y\",\"x\"))[:] = var
-
 nc.close()"""
-tag = ["python", "netcdf4"]
+tag = ["python", "netcdf4", "write"]
 output = ""
 
 [[snippets]]
-description = "NetCDF4 - write (2)"
+description = "NetCDF4 - Write (2)"
 command = """
 f1 = netCDF4.Dataset('myfile.nc','w',format='NETCDF4')
 
@@ -1014,7 +1031,7 @@ time1[:] = date2num(datesout,unout)
 var1[:]  = dataout
 
 f1.close()"""
-tag = ["python", "netcdf4"]
+tag = ["python", "netcdf4", "write"]
 output = ""
 
 [[snippets]]
@@ -1025,8 +1042,10 @@ cftime_times = netCDF4.num2date(time[:], time.units, calendar=time.calendar)
 
                       # Convert cftime objects to numpy.datetime64
 numpy_datetime_array = np.array(cftime_times, dtype='datetime64[ns]')"""
-tag = ["python", "netcdf4"]
+tag = ["python", "netcdf4", "time", "convert"]
 output = ""
+
+#        Scipy
 
 [[snippets]]
 description = "Scipy - Running mean"
@@ -1042,16 +1061,15 @@ l1 = np.shape(var)[0] - l0
 
 vvel_sm[ 0:l0,:] = np.nan                               #  cut the ends
 vvel_sm[l1:nt,:] = np.nan"""
-tag = ["python", "scipy"]
+tag = ["python", "scipy", "running", "mean"]
 output = ""
 
 [[snippets]]
 description = "Scipy - Detrend"
 command = """
 from scipy import signal
-
 var = var.copy(data=signal.detrend(var))"""
-tag = ["python", "scipy"]
+tag = ["python", "scipy", "detrend"]
 output = ""
 
 [[snippets]]
@@ -1071,7 +1089,7 @@ import matplotlib.pyplot as plt
 plt.plot(x, y, 'o', xnew, f(xnew), '-', xnew, f2(xnew), '--')
 plt.legend(['data', 'linear', 'cubic'], loc='best')
 plt.show()"""
-tag = ["python", "scipy"]
+tag = ["python", "scipy", "interpolation"]
 output = ""
 
 [[snippets]]
@@ -1086,27 +1104,7 @@ interp = RegularGridInterpolator( (y,x), data )
 
 y1g,x1g = np.meshgrid(y1,x1, indexing='ij')
 interpolated_data = interp( (y1g,x1g) )"""
-tag = ["python", "scipy"]
-output = ""
-
-[[snippets]]
-description = "Scipy - 2D bilinear interpolation (nearly obsolete)"
-command = """
-from scipy import interpolate
-
-# Construct a 2-D grid and interpolate on it:
-x = np.arange(-5.01, 5.01, 0.25)
-y = np.arange(-5.01, 5.01, 0.25)
-xx, yy = np.meshgrid(x, y)
-z = np.sin(xx**2+yy**2)
-f = interpolate.interp2d(x, y, z, kind='cubic')
-# Now use the obtained interpolation function and plot the result:
-xnew = np.arange(-5.01, 5.01, 1e-2)
-ynew = np.arange(-5.01, 5.01, 1e-2)
-znew = f(xnew, ynew)
-plt.plot(x, z[0, :], 'ro-', xnew, znew[0, :], 'b-')
-plt.show()"""
-tag = ["python", "scipy"]
+tag = ["python", "scipy", "interpolation"]
 output = ""
 
 [[snippets]]
@@ -1125,7 +1123,7 @@ edof = edof_cor (x,y)  #  x & y should not include any nan or missing value
 
 t1 = t.ppf( (1.-(1.-alpha)/2.), edof-2., loc=0,scale=1)
 sig_cor = np.sqrt( t1**2 /((edof-2.)+t1**2) )"""
-tag = ["python", "scipy"]
+tag = ["python", "scipy", "correlation"]
 output = ""
 
 [[snippets]]
@@ -1142,7 +1140,7 @@ for l in range(len(lag)):
     print(f'lag[l]={lag[l]:3d}; lx0:lx1={lx0:3d}:{lx1:3d}; ly0:ly1={ly0:3d}:{ly1:3d}')
     #    negative lag = tmpy leads
     #    positive lag = tmpx leads"""
-tag = ["python", "scipy"]
+tag = ["python", "scipy", "correlation", "lead-lag"]
 output = ""
 
 [[snippets]]
@@ -1157,16 +1155,15 @@ initial_guess = [10., 1000., 1.]   #  Initial guess is very important
 popt, pcov = curve_fit(func, xdata, ydata, p0=initial_data)
 estimated = func(xdata, *popt)     #  the resulting line
 print('estimated a, b, c = ',popt)"""
-tag = ["python", "scipy"]
+tag = ["python", "scipy", "function", "fitting"]
 output = ""
 
 [[snippets]]
 description = "Scipy - Power spectrum (peridogram)"
 command = """
 from scipy import signal
-
 freq, Pxx_den = signal.periodogram(input_time_series, sampling_frequency)"""
-tag = ["python", "scipy"]
+tag = ["python", "scipy", "spectrum"]
 output = ""
 
 [[snippets]]
@@ -1184,54 +1181,35 @@ f, Pxx_den = signal.welch(x, fs, nperseg=nperseg)
 #          period minus 1 is the number of estimates.
 #
 #  If the Hanning window is used, EDOF = EDOF * (8/3) (Thomson and Emery 2014, Table 5.5, p. 479)"""
-tag = ["python", "scipy"]
+tag = ["python", "scipy", "spectrum", "welch"]
 output = ""
 
 [[snippets]]
 description = "Scipy - Smoothing (band averaging)"
 command = """
 from scipy.ndimage import uniform_filter1d
-
 for i in range(0,5):                               #    5 times
     var = uniform_filter1d(var, size=10, axis=0)   #   10 grid points"""
-tag = ["python", "scipy"]
+tag = ["python", "scipy", "smoothing"]
 output = ""
 
 [[snippets]]
 description = "Scipy - Filtering"
 command = """
 from scipy import signal
-
 order = 5
-
 sos = signal.butter(order, [lowcut, highcut], fs=fs, btype='band', output='sos')
 var_out = signal.sosfiltfilt(sos, var_in)"""
-tag = ["python", "scipy"]
+tag = ["python", "scipy", "filtering", "digital"]
 output = ""
 
-[[snippets]]
-description = "Scipy - NetCDF Output"
-command = """
-from scipy.io import netcdf_file
-
-f = netcdf_file('out.nc', 'w')
-f.createDimension('ycoord', len(ycoord))
-f.createDimension('xcoord', len(xcrood))
-ycoord_1  = f.createVariable('ycoord', ycoord.dtype, ('ycoord',))
-xcoord_1  = f.createVariable('xcoord',    'float64', ('xcoord',))
-var_1     = f.createVariable('var',       var.dtype, ('ycoord','xcoord',))
-ycoord_1[:] = ycoord
-xcoord_1[:] = xcoord
-var_1[:]    = var
-f.close()"""
-tag = ["python", "scipy"]
-output = ""
+#        Panas
 
 [[snippets]]
 description = "Pandas - Imports"
 command = """
 import pandas as pd"""
-tag = ["python", "pandas"]
+tag = ["python", "pandas", "import"]
 output = ""
 
 [[snippets]]
@@ -1308,18 +1286,20 @@ time = pd.to_datetime(np.array(time))"""
 tag = ["python", "pandas"]
 output = ""
 
+#        NetCDF4
+
 [[snippets]]
 description = "Xarray - Imports"
 command = """
 import xarray as xr"""
-tag = ["python", "xarray"]
+tag = ["python", "xarray", "import"]
 output = ""
 
 [[snippets]]
 description = "Xarray - Read in"
 command = """
 var = xr.open_dataset(infile)['var'].sel(lon=slice(x0,x1))"""
-tag = ["python", "xarray"]
+tag = ["python", "xarray", "read"]
 output = ""
 
 [[snippets]]
@@ -1327,7 +1307,7 @@ description = "Xarray - Read in (2)"
 command = """
 slice_setting = dict(lon=slice(10., 20.))
 arr = xr.open_dataset(\"file.nc\")['var'].sel(slice_setting)"""
-tag = ["python", "xarray"]
+tag = ["python", "xarray", "read"]
 output = ""
 
 [[snippets]]
@@ -1337,14 +1317,14 @@ time = xr.open_dataset(infile)['time']
 time = np.array(time)
 time = (time - time[0]).astype('timedelta64[D]')
 time = time.astype(float)"""
-tag = ["python", "xarray"]
+tag = ["python", "xarray", "read", "time", "convert"]
 output = ""
 
 [[snippets]]
 description = "Xarray - Write out"
 command = """
 ds.to_netcdf('./mask.nc')"""
-tag = ["python", "xarray"]
+tag = ["python", "xarray", "write"]
 output = ""
 
 [[snippets]]
@@ -1352,16 +1332,7 @@ description = "Xarray - Convert a numpy array to an xarray"
 command = """
 var_out = xr.DataArray(data=var, coords=[time, lat, lon], dims=['time','lat', 'lon'])
                                    #   append coordinates"""
-tag = ["python", "xarray"]
-output = ""
-
-[[snippets]]
-description = "Xarray - Slice"
-command = """
-var_sliced = var.sel(lon=slice(90.,100.))
-
-var_sliced = var.sel(time=slice('2000-06-01', '2000-06-10'))"""
-tag = ["python", "xarray"]
+tag = ["python", "xarray", "array", "convert"]
 output = ""
 
 [[snippets]]
@@ -1382,7 +1353,7 @@ ds = xr.Dataset(
 ds.lon.attrs['units'] = 'degrees_east'
 ds.lat.attrs['units'] = 'degrees_north'
 ds.time.attrs['units'] = 'days since 1990/1/1'"""
-tag = ["python", "xarray"]
+tag = ["python", "xarray", "dataset"]
 output = ""
 
 [[snippets]]
@@ -1393,67 +1364,18 @@ tag = ["python", "xarray"]
 output = ""
 
 [[snippets]]
-description = "Xarray - Common period"
-command = """
-time_strt = max([var1.time[ 0], var2.time[ 0]])
-time_end  = min([var1.time[-1], var2.time[-1]])
-
-var1_common_period = var1.sel(time=slice(time_strt, time_end))
-var2_common_period = var2.sel(time=slice(time_strt, time_end))"""
-tag = ["python", "xarray"]
-output = ""
-
-[[snippets]]
 description = "Xarray - Subtract monthly climatology"
 command = """
 climatology = ds.groupby('time.month').mean('time')
 anomalies = ds.groupby('time.month') - climatology"""
-tag = ["python", "xarray"]
-output = ""
-
-[[snippets]]
-description = "Xarray - Running mean"
-command = """
-var = var.rolling(time=13, center=True).mean()
-var = var[~np.isnan(var)]  #  cut the ends"""
-tag = ["python", "xarray"]
-output = ""
-
-[[snippets]]
-description = "Xarray - Weighted running mean"
-command = """
-weight = xr.DataArray([0.25, 0.5, 0.25], dims=['window'])
-var = var.rolling(lon=3, center=True).construct('window').dot(weight)
-#             \"3\" is window width"""
-tag = ["python", "xarray"]
-output = ""
-
-[[snippets]]
-description = "Xarray - Remove nan after running mean"
-command = """
-var = var[~np.isnan(var).any(axis=(1,2,)),:,:]   #  var = (T,Y,X)"""
-tag = ["python", "xarray"]
-output = ""
-
-[[snippets]]
-description = "Xarray - Derivative"
-command = """
-var = varin.differentiate('lat')"""
-tag = ["python", "xarray"]
-output = ""
-
-[[snippets]]
-description = "Xarray - Transpose array"
-command = """
-var_transposed = var.transpose('x','y')"""
-tag = ["python", "xarray"]
+tag = ["python", "xarray", "calculation",]
 output = ""
 
 [[snippets]]
 description = "Xarray - Remove dimension"
 command = """
 var = var.squeeze(drop=True)"""
-tag = ["python", "xarray"]
+tag = ["python", "xarray", "array"]
 output = ""
 
 [[snippets]]
@@ -1474,31 +1396,30 @@ print('t_strt = ',t_strt,',  t_end = ',t_end)"""
 tag = ["python", "xarray"]
 output = ""
 
+#        TEOS10 gsw
+
 [[snippets]]
-description = "Xarray - interpolation"
+description = "TEOS10 gsw - Imports"
 command = """
-var_intp = var.interp(lon=x0, time=t0)"""
-tag = ["python", "xarray"]
+import gsw"""
+tag = ["python", "gsw", "import"]
 output = ""
 
 [[snippets]]
-description = "TEOS10 gsw - Seawater density and pressure"
+description = "TEOS10 gsw - Seawater potential density"
 command = """
-import gsw
-
 pres = gsw.conversions.p_from_z(lev,lat)
 sa   = gsw.conversions.SA_from_SP(salt,pres,lon,lat)
 ct   = gsw.conversions.CT_from_pt(sa,temp)
 prho = gsw.density.sigma0(sa,ct)"""
-tag = ["python", "gsw"]
+tag = ["python", "gsw", "prho", "density", "potential"]
 output = ""
 
 [[snippets]]
-description = "TEOS10 gsw - -"
+description = "TEOS10 gsw - Seawater potential density - Array"
 command = """
 #  temp[{time},{lev},{lat},{lon}]
 #  salt[{time},{lev},{lat},{lon}]
-
 lon1, lat1, pres = np.zeros((3,len(lev),len(lat),len(lon)))
 prho = np.zeros((len(time),len(lev),len(lat),len(lon)))
 
@@ -1516,8 +1437,10 @@ for l in range(len(time)):
     sa   = gsw.conversions.SA_from_SP(salt[l,:,:,:],pres,lon1,lat1)
     ct   = gsw.conversions.CT_from_pt(sa,temp[l,:,:,:])
     prho[l,:,:,:] = gsw.density.sigma0(sa,ct)"""
-tag = ["python", "gsw"]
+tag = ["python", "gsw", "prho", "density", "potential"]
 output = ""
+
+#        Sympy
 
 [[snippets]]
 description = "Sympy - Symbolic integration"
@@ -1528,6 +1451,8 @@ command = """
 sqrt(2)*sqrt(pi)/2"""
 tag = ["python", "sympy"]
 output = ""
+
+#        datetime
 
 [[snippets]]
 description = "datetime - get year/month/day etc from timestamp"
@@ -1584,11 +1509,18 @@ for i in range(nt):
 tag = ["python", "datetime"]
 output = ""
 
+#        pywavelets
+
+[[snippets]]
+description = "pywavelets - Imports"
+command = """
+import pywt"""
+tag = ["python", "pywavelets", "import"]
+output = ""
+
 [[snippets]]
 description = "pywavelets - Continuous wavelet transform"
 command = """
-import pywt
-
 scales = np.arange(1,50)       #  scale. Frequency depends on it
 wavelet_name = 'cmor2.0-1.0'   #  wavelet function in the form of 'cmorB-C.'
                                #      cmor = Complex Morlet
@@ -1616,7 +1548,7 @@ for j in range(np.shape(power)[1]):
 #  Get wavelet function
 #     % wavelet = pywt.ContinuousWavelet(wavelet_name)
 #     % psi, x = wavelet.wavefun()"""
-tag = ["python", "pywavelets"]
+tag = ["python", "pywavelets", "continuous", "wavelet"]
 output = ""
 
 [[snippets]]
@@ -1629,6 +1561,8 @@ scales = pywt.frequency2scale(wavelet_name, freq)"""
 tag = ["python", "pywavelets"]
 output = ""
 
+#        rich
+
 [[snippets]]
 description = "rich - Rich traceback"
 command = """
@@ -1636,6 +1570,8 @@ from rich import traceback
 traceback.install()"""
 tag = ["python", "rich"]
 output = ""
+
+#        importlib
 
 [[snippets]]
 description = "importlib - Import main(): from a file in a different directory"
@@ -1659,6 +1595,8 @@ module.main()"""
 tag = ["python", "importlib"]
 output = ""
 
+#        Cartopy
+
 [[snippets]]
 description = "Cartopy - Imports"
 command = """
@@ -1668,86 +1606,114 @@ import cartopy.mpl.ticker as cticker"""
 tag = ["python", "cartopy"]
 output = ""
 
+#        LaTeX
+
 [[snippets]]
-description = "Cartopy - Projection"
-command = """
-ctp_prj1 = ccrs.PlateCarree(central_longitude=180.)
-ctp_prj2 = ccrs.PlateCarree()"""
-tag = ["python", "cartopy"]
+description = "LaTeX - Environments"
+command = '''
+\documentclass[]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,mathrsfs,amssymb,empheq,bm,pdfpages,cancel}
+\newcommand{\pt}{\partial}'''
+tag = ["latex", "header", "documentclass", "usepackage"]
 output = ""
 
 [[snippets]]
-description = "Cartopy - Add projection to the map"
-command = """
-fig, ax1 = plt.subplots(2,1,subplot_kw={'projection': ctp_prj1})
-
-#                                             ... or
-
-fig = plt.figure(figsize=(6,6))
-ax1 = fig.add_axes([0.15, 0.6, 0.7, 0.3], projection=ctp_prj1)
-#                   left, bottom, width, height"""
-tag = ["python", "cartopy"]
+description = "LaTeX - biber"
+command = '''
+\usepackage[
+  backend=biber,
+  style=apa
+]{biblatex}
+\addbibresource{\subfix{./2015_Hall/references.bib}}
+%  To update references, run "biber note4"
+%      \textcite{shilov1977}
+%      \parencite{shilov1977}
+%      \citeauthor{shilov1977} \citeyear{shilov1977}'''
+tag = ["latex", "biber", "reference"]
 output = ""
 
 [[snippets]]
-description = "Cartopy - Make a contour map"
-command = """
-cs = ax1.contourf(lon,lat,var,transform=ctp_prj2)"""
-tag = ["python", "cartopy"]
+description = "LaTeX - clever reference"
+command = '''
+\usepackage{cleveref}
+\crefname{equation}{eq.}{eqs.}
+\Crefname{equation}{Eq.}{Eqs.}'''
+tag = ["latex", "biber", "reference", "clever", "cleveref"]
 output = ""
 
 [[snippets]]
-description = "Cartopy - Add coastlines and land fill"
-command = """
-ax1.coastlines()
-ax1.add_feature(cartopy.feature.LAND, zorder=1, edgecolor='k')"""
-tag = ["python", "cartopy"]
+description = "LaTeX - Include a figure"
+command = '''
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=12cm,trim={2cm 2cm 2cm 2cm},clip]{fig.pdf}
+  \caption{CAPTION}
+  \label{LABEL}
+\end{figure}'''
+tag = ["latex", "include", "figure"]
 output = ""
 
 [[snippets]]
-description = "Cartopy - Add longitude labels"
-command = """
-ax1.set_extent([100.,300.,-30.,30.], crs=ctp_prj2)  #   lon/lat range (x0,x1,y0,y1)
+description = "LaTeX - Font for code"
+command = '''
+\begin{verbatim}
+  Aval=np.array([12.04, 12.37, 12.35, 12.43, 12.34, 12.36, 12.48, 12.33, 12.33])
+  Bval=np.array([12.18, 12.37, 12.38, 12.36, 12.47, 12.48, 12.57, 12.28, 12.42])
+\end{verbatim}
 
-ax1.set_xticks(np.arange(120,301,60), crs=ccrs.PlateCarree())
-lon_formatter = cticker.LongitudeFormatter()
-ax1.xaxis.set_major_formatter(lon_formatter)"""
-tag = ["python", "cartopy"]
+\verb+Some letters+'''
+tag = ["latex", "font", "code", "verb", "verbatim"]
 output = ""
 
 [[snippets]]
-description = "Cartopy - Generate a blank map"
-command = """
-ax = plt.axes(projection=ccrs.PlateCarree())
-ax.coastlines()"""
-tag = ["python", "cartopy"]
+description = "LaTeX - Equations with left curly bracket"
+command = '''
+\begin{empheq}[left=\empheqlbrace]{align}
+  a + b &= c, \\
+  d + e &= f.
+\end{empheq}'''
+tag = ["latex", "equations", "curly", "brackets", "empheq"]
 output = ""
 
 [[snippets]]
-description = "Nio - Write"
-command = """
-import Nio
+description = "LaTeX - Matrix with indices (nice matrix)"
+command = '''
+\usepackage{nicematrix}
+\begin{align}
+  A =
+  \begin{pNiceMatrix}[first-row,first-col]
+        &        &        &      j &        &      k &        &        \\
+        &      0 & \cdots &      0 & \cdots &      0 & \cdots &      0 \\
+        & \vdots &        & \vdots &        & \vdots &        & \vdots \\
+     j  &      0 & \cdots &      0 & \cdots &      1 & \cdots &      0 \\
+        & \vdots &        & \vdots &        & \vdots &        & \vdots \\
+     k  &      0 & \cdots &      0 & \cdots &      0 & \cdots &      0 \\
+        & \vdots &        & \vdots &        & \vdots &        & \vdots \\
+        &      0 & \cdots &      0 & \cdots &      0 & \cdots &      0
+  \end{pNiceMatrix}  
+\end{align}'''
+tag = ["latex", "nice", "matrix", "indices"]
+output = ""
 
-f1 = Nio.open_file('out.nc', \"w\")
+[[snippets]]
+description = "LaTeX - Bullets"
+command = '''
+\newcommand{\firstbullet}{\noindent \textbullet \hspace{6 pt}}
+\renewcommand{\bullet}{\vspace{6 pt} \noindent \textbullet \hspace{6 pt}}'''
+tag = ["latex", "bullet"]
+output = ""
 
-f1.create_dimension('lon', nx)
-f1.create_dimension('lat', ny)
-f1.create_dimension('time',nt)
-
-var1 = f1.create_variable('lon', 'f',('lon',))
-var2 = f1.create_variable('lat', 'f',('lat',))
-var3 = f1.create_variable('time','d',('time',))
-var4 = f1.create_variable('taux','d',('time','lat','lon'))
-var5 = f1.create_variable('tauy','d',('time','lat','lon'))
-
-f1.variables['time'].units = time1.units
-
-f1.variables['lon'][:] = lon1
-f1.variables['lat'][:] = lat1
-f1.variables['time'][:] = time
-f1.variables['taux'][:,:,:] = taux
-f1.variables['tauy'][:,:,:] = tauy
-
-f1.close()"""
-tag = ["python", "nio"]
+[[snippets]]
+description = "LaTeX - subfiles"
+command = '''
+\usepackage{subfiles}    #  in MAIN.tex
+\subfile{SUBDIR/FILE1}   #  in MAIN.tex
+%
+% !TEX root = FILE1.tex                #  in FILE1.tex
+\documentclass[../MAIN.tex]{subfiles}  #  in FILE1.tex
+\begin{document}                       #  in FILE1.tex
+\end{document}                         #  in FILE1.tex
+'''
+tag = ["latex", "subfiles", "include"]
 output = ""
