@@ -673,13 +673,13 @@ output = ""
 
 [[snippets]]
 description = "Matplotlib - vertical line from the bottom to the top"
-command = """ax.axvline(x=0.5)"""
+command = """ax.axvline(x=0.0,c='k',lw=0.5)"""
 tag = ["python", "matplotlib", "vertical", "line", "axvline"]
 output = ""
 
 [[snippets]]
 description = "Matplotlib - horizontal line from the bottom to the top"
-command = """ax.axhline(y=1.2)"""
+command = """ax.axhline(y=0.0,c='k',lw=0.5)"""
 tag = ["python", "matplotlib", "horizontal", "line", "axhline"]
 output = ""
 
